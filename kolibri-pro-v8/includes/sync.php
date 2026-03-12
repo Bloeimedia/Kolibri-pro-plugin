@@ -119,10 +119,192 @@ $message.=' Let op: '.trim((string)$result['source_warning']);
 return $message;
 }
 
+function kolibri_media_folder_name_from_external_id($external_id){
+$name=strtolower(trim((string)$external_id));
+$name=preg_replace('/[^a-z0-9_-]+/','-',$name);
+$name=trim((string)$name,'-');
+if($name===''){
+$name='obj-'.substr(md5((string)$external_id),0,12);
+}
+return $name;
+}
+
+function kolibri_media_paths_for_external_id($external_id){
+$uploads=wp_upload_dir();
+$base_dir=trailingslashit((string)$uploads['basedir']).'kolibri';
+$base_url=trailingslashit((string)$uploads['baseurl']).'kolibri';
+$folder=kolibri_media_folder_name_from_external_id($external_id);
+return [
+'base_dir'=>$base_dir,
+'base_url'=>$base_url,
+'dir'=>trailingslashit($base_dir).$folder,
+'url'=>trailingslashit($base_url).$folder,
+];
+}
+
+function kolibri_delete_dir_recursive($dir){
+$dir=(string)$dir;
+if($dir==='' || !is_dir($dir)){ return; }
+$items=scandir($dir);
+if(!is_array($items)){ return; }
+foreach($items as $item){
+if($item==='.' || $item==='..'){ continue; }
+$path=$dir.DIRECTORY_SEPARATOR.$item;
+if(is_dir($path)){
+kolibri_delete_dir_recursive($path);
+continue;
+}
+@unlink($path);
+}
+@rmdir($dir);
+}
+
+function kolibri_delete_local_media_for_external_id($external_id){
+$paths=kolibri_media_paths_for_external_id($external_id);
+kolibri_delete_dir_recursive($paths['dir']);
+}
+
+function kolibri_cleanup_orphan_media_dirs($active_external_ids){
+$uploads=wp_upload_dir();
+$root=trailingslashit((string)$uploads['basedir']).'kolibri';
+if(!is_dir($root)){ return; }
+
+$allowed=[];
+foreach((array)$active_external_ids as $external_id){
+$allowed[kolibri_media_folder_name_from_external_id((string)$external_id)]=true;
+}
+
+$entries=scandir($root);
+if(!is_array($entries)){ return; }
+foreach($entries as $entry){
+if($entry==='.' || $entry==='..'){ continue; }
+$full=$root.DIRECTORY_SEPARATOR.$entry;
+if(!is_dir($full)){ continue; }
+if(isset($allowed[$entry])){ continue; }
+kolibri_delete_dir_recursive($full);
+}
+}
+
+function kolibri_is_likely_image_url_remote($url){
+$url=trim((string)$url);
+if($url==='' || !wp_http_validate_url($url)){ return false; }
+
+$path=(string)parse_url($url,PHP_URL_PATH);
+if($path==='' || $path==='/' || $path==='.') { return false; }
+if(preg_match('/\.(php|asp|aspx|jsp|html?)$/i',$path)){ return false; }
+
+if(preg_match('/\.(jpg|jpeg|png|gif|webp|avif|bmp|heic|heif|jfif)$/i',$path)){ return true; }
+if(strpos($path,'/media/')!==false || strpos($path,'/image/')!==false || strpos($path,'/img/')!==false){ return true; }
+
+return true;
+}
+
+function kolibri_guess_image_extension($url,$content_type=''){
+$path=(string)parse_url((string)$url,PHP_URL_PATH);
+$ext=strtolower((string)pathinfo($path,PATHINFO_EXTENSION));
+if($ext!==''){ return '.'.$ext; }
+
+$ct=strtolower(trim((string)$content_type));
+if($ct!==''){
+if(strpos($ct,'image/jpeg')!==false){ return '.jpg'; }
+if(strpos($ct,'image/png')!==false){ return '.png'; }
+if(strpos($ct,'image/webp')!==false){ return '.webp'; }
+if(strpos($ct,'image/gif')!==false){ return '.gif'; }
+if(strpos($ct,'image/avif')!==false){ return '.avif'; }
+}
+return '.jpg';
+}
+
+function kolibri_download_image_body($url,$referer=''){
+$headers=[
+'Accept'=>'image/avif,image/webp,image/apng,image/*,*/*;q=0.8',
+];
+$referer=trim((string)$referer);
+if($referer!=='' && wp_http_validate_url($referer)){
+$headers['Referer']=$referer;
+}
+
+$response=wp_remote_get($url,[
+'timeout'=>30,
+'redirection'=>5,
+'headers'=>$headers,
+'user-agent'=>'Mozilla/5.0 (Kolibri Sync)',
+]);
+if(is_wp_error($response)){ return null; }
+if((int)wp_remote_retrieve_response_code($response)!==200){ return null; }
+
+$content_type=(string)wp_remote_retrieve_header($response,'content-type');
+if($content_type!=='' && stripos($content_type,'image/')!==0){ return null; }
+
+$body=wp_remote_retrieve_body($response);
+if(!is_string($body) || $body===''){ return null; }
+
+return [
+'body'=>$body,
+'content_type'=>$content_type,
+];
+}
+
+function kolibri_sync_local_media_for_post($post_id,$external_id,$remote_images,$referer=''){
+$post_id=(int)$post_id;
+$external_id=(string)$external_id;
+$clean_remote=[];
+foreach((array)$remote_images as $img){
+$url=esc_url_raw(trim((string)$img));
+if($url==='' || !kolibri_is_likely_image_url_remote($url)){ continue; }
+$clean_remote[]=$url;
+}
+$clean_remote=array_values(array_unique($clean_remote));
+
+if(empty($clean_remote)){
+kolibri_delete_local_media_for_external_id($external_id);
+delete_post_meta($post_id,'kolibri_remote_images_localized');
+return [];
+}
+
+$paths=kolibri_media_paths_for_external_id($external_id);
+wp_mkdir_p($paths['dir']);
+
+$local_urls=[];
+$keep_files=[];
+$index=1;
+foreach($clean_remote as $remote_url){
+$download=kolibri_download_image_body($remote_url,$referer);
+if(!$download){ continue; }
+
+$ext=kolibri_guess_image_extension($remote_url,(string)$download['content_type']);
+$filename=sprintf('%02d-%s%s',$index,substr(md5($remote_url),0,10),$ext);
+$filepath=trailingslashit($paths['dir']).$filename;
+
+if(@file_put_contents($filepath,$download['body'])===false){ continue; }
+$keep_files[$filename]=true;
+$local_urls[]=trailingslashit($paths['url']).$filename;
+$index++;
+}
+
+if(is_dir($paths['dir'])){
+$existing=scandir($paths['dir']);
+if(is_array($existing)){
+foreach($existing as $file){
+if($file==='.' || $file==='..'){ continue; }
+if(isset($keep_files[$file])){ continue; }
+@unlink(trailingslashit($paths['dir']).$file);
+}
+}
+}
+
+if(empty($local_urls)){
+return $clean_remote;
+}
+
+update_post_meta($post_id,'kolibri_remote_images_localized',1);
+return $local_urls;
+}
+
 function kolibri_get_remote_items_from_payload($payload){
 if(!is_array($payload)){ return []; }
 if(array_keys($payload)===range(0,count($payload)-1)){ return $payload; }
-foreach(['items','objects','results','data'] as $key){
+foreach(['cards','items','objects','results','data','listings','properties'] as $key){
 if(isset($payload[$key]) && is_array($payload[$key])){ return $payload[$key]; }
 }
 return [];
@@ -162,29 +344,34 @@ return $clean;
 function kolibri_normalize_remote_item($item){
 if(!is_array($item)){ return null; }
 
+$detail_url='';
+foreach(['url','link','permalink','detail_url','detailUrl','external_url','object_url'] as $url_key){
+if(empty($item[$url_key])){ continue; }
+$maybe=esc_url_raw((string)$item[$url_key]);
+if($maybe==='' || !wp_http_validate_url($maybe)){ continue; }
+$detail_url=$maybe;
+break;
+}
+
 $external_id='';
 foreach(['id','external_id','object_id','uuid','reference','ref'] as $key){
 if(!empty($item[$key])){ $external_id=(string)$item[$key]; break; }
 }
 if($external_id===''){
-foreach(['url','link','permalink','detail_url','detailUrl','external_url','object_url'] as $url_key){
-if(empty($item[$url_key])){ continue; }
-$url=esc_url_raw((string)$item[$url_key]);
-if($url===''){ continue; }
-$external_id='url_'.substr(md5(strtolower($url)),0,16);
-break;
+if($detail_url!==''){
+$external_id='url_'.substr(md5(strtolower($detail_url)),0,16);
 }
 }
 if($external_id===''){ return null; }
 
 $title='';
-foreach(['title','naam','name','adres'] as $key){
+foreach(['title','naam','name','adres','address','street'] as $key){
 if(!empty($item[$key])){ $title=(string)$item[$key]; break; }
 }
 if($title===''){ $title='Object '.$external_id; }
 
 $content='';
-foreach(['content','description','omschrijving','body'] as $key){
+foreach(['content','description','omschrijving','body','text','summary','details'] as $key){
 if(!empty($item[$key])){ $content=(string)$item[$key]; break; }
 }
 
@@ -192,7 +379,7 @@ $meta_map=[
 'kolibri_prijs'=>['prijs','price'],
 'kolibri_plaats'=>['plaats','city','location'],
 'kolibri_kamers'=>['kamers','rooms'],
-'kolibri_oppervlakte'=>['oppervlakte','area','living_area'],
+'kolibri_oppervlakte'=>['oppervlakte','area','living_area','surface'],
 ];
 $meta=[];
 foreach($meta_map as $meta_key=>$candidates){
@@ -206,6 +393,21 @@ break;
 
 $images=kolibri_extract_images_from_remote_item($item);
 if(!empty($images)){ $meta['kolibri_remote_images']=$images; }
+if($detail_url!==''){ $meta['kolibri_external_url']=$detail_url; }
+if($title!==''){ $meta['kolibri_adres']=$title; }
+
+if($content===''){
+$pairs=[];
+if(!empty($meta['kolibri_prijs'])){ $pairs['Prijs']=kolibri_sync_format_price_pm((string)$meta['kolibri_prijs']); }
+if(!empty($meta['kolibri_plaats'])){ $pairs['Plaats']=(string)$meta['kolibri_plaats']; }
+if(!empty($meta['kolibri_oppervlakte'])){ $pairs['Oppervlakte']=(string)$meta['kolibri_oppervlakte'].' m2'; }
+if(!empty($meta['kolibri_kamers'])){ $pairs['Kamers']=(string)$meta['kolibri_kamers']; }
+$description='';
+if($detail_url!==''){
+$description='Bekijk de volledige advertentie via de externe link.';
+}
+$content=kolibri_build_property_content_html($description,$pairs);
+}
 
 return [
 'external_id'=>$external_id,
@@ -272,6 +474,19 @@ $created++;
 }
 
 update_post_meta($post_id,'_kolibri_external_id',$external_id);
+if(isset($item['meta']['kolibri_remote_images']) && is_array($item['meta']['kolibri_remote_images'])){
+$referer=isset($item['meta']['kolibri_external_url']) ? (string)$item['meta']['kolibri_external_url'] : '';
+$item['meta']['kolibri_remote_images']=kolibri_sync_local_media_for_post(
+$post_id,
+$external_id,
+$item['meta']['kolibri_remote_images'],
+$referer
+);
+}else{
+kolibri_delete_local_media_for_external_id($external_id);
+delete_post_meta($post_id,'kolibri_remote_images');
+delete_post_meta($post_id,'kolibri_remote_images_localized');
+}
 foreach($item['meta'] as $meta_key=>$meta_value){
 update_post_meta($post_id,$meta_key,$meta_value);
 }
@@ -280,9 +495,11 @@ update_post_meta($post_id,$meta_key,$meta_value);
 $remote_ids=array_keys($normalized);
 foreach($existing_by_external_id as $external_id=>$post_id){
 if(in_array($external_id,$remote_ids,true)){ continue; }
+kolibri_delete_local_media_for_external_id($external_id);
 wp_delete_post((int)$post_id,true);
 $deleted++;
 }
+kolibri_cleanup_orphan_media_dirs($remote_ids);
 
 if(function_exists('kolibri_clear_known_caches')){
 kolibri_clear_known_caches();

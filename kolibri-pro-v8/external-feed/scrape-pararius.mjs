@@ -11,27 +11,18 @@ const OUTPUT_FILE =
   path.resolve(process.cwd(), '..', 'docs', 'feed.json');
 const LIMIT = Math.max(1, Math.min(100, Number(process.env.FEED_LIMIT || 30)));
 
-function normalizeUrl(url) {
+function cleanText(value) {
+  return String(value || '').replace(/\s+/g, ' ').trim();
+}
+
+function normalizeUrl(value) {
+  const raw = cleanText(value);
+  if (!raw) return '';
   try {
-    return new URL(url, 'https://www.pararius.nl').toString();
+    return new URL(raw, 'https://www.pararius.nl').toString();
   } catch {
     return '';
   }
-}
-
-function normalizePrice(value) {
-  const raw = String(value || '').trim();
-  if (!raw) return '';
-  const m = raw.match(/([0-9][0-9\.\,]*)/);
-  return m ? m[1].replace(/[^\d]/g, '') : '';
-}
-
-function stableId(url) {
-  return 'pararius_' + crypto.createHash('sha1').update(url).digest('hex').slice(0, 16);
-}
-
-function cleanTitle(value) {
-  return String(value || '').replace(/\s+/g, ' ').trim();
 }
 
 function isDetailPath(url) {
@@ -43,64 +34,209 @@ function isDetailPath(url) {
   }
 }
 
-function collectFromJsonLd(node, out) {
-  if (Array.isArray(node)) {
-    for (const item of node) collectFromJsonLd(item, out);
-    return;
-  }
-  if (!node || typeof node !== 'object') return;
+function normalizePrice(value) {
+  const raw = cleanText(value);
+  if (!raw) return '';
+  const m = raw.match(/([0-9][0-9\.\,]*)/);
+  return m ? m[1].replace(/[^\d]/g, '') : '';
+}
 
-  const url = normalizeUrl(node.url || node['@id'] || node.mainEntityOfPage);
-  const title = cleanTitle(node.name || node.headline || node.title || '');
-  if (url && isDetailPath(url) && title) {
-    const image = Array.isArray(node.image) ? node.image[0] : node.image;
-    const imageUrl =
-      typeof image === 'string'
-        ? normalizeUrl(image)
-        : image && typeof image.url === 'string'
-          ? normalizeUrl(image.url)
-          : '';
-    out.push({
-      title,
-      url,
-      price: normalizePrice(node.price || node.offers?.price || ''),
-      image: imageUrl || '',
-    });
-  }
+function normalizeInt(value) {
+  const raw = cleanText(value);
+  if (!raw) return '';
+  const digits = raw.match(/\d+/);
+  return digits ? String(Number(digits[0])) : '';
+}
 
-  for (const value of Object.values(node)) {
-    collectFromJsonLd(value, out);
+function stableId(url) {
+  return 'pararius_' + crypto.createHash('sha1').update(url).digest('hex').slice(0, 16);
+}
+
+function isLikelyImageUrl(url) {
+  try {
+    const u = new URL(url);
+    const p = (u.pathname || '').toLowerCase();
+    if (!p || p === '/' || p === '/favicon.ico') return false;
+    if (/\.(jpg|jpeg|png|gif|webp|avif|bmp|heic|heif)(?:$|\?)/i.test(url)) return true;
+    if (p.includes('/media/') || p.includes('/image/') || p.includes('/img/')) return true;
+    if (p.includes('/logo')) return false;
+    return true;
+  } catch {
+    return false;
   }
 }
 
-async function scrapeCards() {
-  const browser = await chromium.launch({ headless: true });
+function dedupeStrings(values) {
+  const out = [];
+  const seen = new Set();
+  for (const v of values) {
+    const c = cleanText(v);
+    if (!c) continue;
+    if (seen.has(c)) continue;
+    seen.add(c);
+    out.push(c);
+  }
+  return out;
+}
+
+function pickBestDescription(candidates) {
+  const clean = dedupeStrings(candidates).filter((v) => v.length >= 40);
+  if (!clean.length) return '';
+  clean.sort((a, b) => b.length - a.length);
+  return clean[0];
+}
+
+function pickBestTitle(candidates, fallback = '') {
+  const clean = dedupeStrings(candidates).filter((v) => v.length >= 4);
+  if (clean.length) return clean[0];
+  return cleanText(fallback);
+}
+
+function pickImages(candidates, limit = 20) {
+  const normalized = [];
+  const seen = new Set();
+  for (const raw of candidates) {
+    const url = normalizeUrl(raw);
+    if (!url || !isLikelyImageUrl(url)) continue;
+    if (seen.has(url)) continue;
+    seen.add(url);
+    normalized.push(url);
+    if (normalized.length >= limit) break;
+  }
+  return normalized;
+}
+
+function pickCity(candidates) {
+  const clean = dedupeStrings(candidates);
+  for (const c of clean) {
+    if (/^[a-zA-ZÀ-ÿ' -]{2,}$/u.test(c)) return c;
+  }
+  return '';
+}
+
+async function collectListingItems(page) {
+  return page.evaluate(() => {
+    const clean = (v) => String(v || '').replace(/\s+/g, ' ').trim();
+    const isDetail = (url) => {
+      try {
+        const path = new URL(url).pathname || '';
+        return /\/[a-z-]+-te-huur\/[a-z0-9-]+\/[0-9a-f]{8}\//i.test(path);
+      } catch {
+        return false;
+      }
+    };
+    const abs = (v) => {
+      try {
+        return new URL(String(v || ''), location.origin).toString();
+      } catch {
+        return '';
+      }
+    };
+    const parseSrcset = (srcset) => {
+      const first = String(srcset || '').split(',')[0] || '';
+      return first.trim().split(/\s+/)[0] || '';
+    };
+
+    const items = [];
+    const pushed = new Set();
+    const priceRegex = /€\s*([0-9\.\,]+)/i;
+
+    for (const a of document.querySelectorAll('a[href]')) {
+      const url = abs(a.getAttribute('href'));
+      if (!url || !isDetail(url)) continue;
+      if (pushed.has(url)) continue;
+      pushed.add(url);
+
+      const card = a.closest('article,li,div') || a.parentElement;
+      const heading = card?.querySelector('h1,h2,h3,h4');
+      const title = clean(heading?.textContent || a.textContent || '');
+
+      const blockText = clean(card?.textContent || '');
+      const priceMatch = blockText.match(priceRegex);
+      const price = priceMatch ? priceMatch[1] : '';
+
+      const img =
+        card?.querySelector('img') ||
+        card?.querySelector('source[srcset]') ||
+        a.querySelector('img') ||
+        a.querySelector('source[srcset]');
+
+      let image = '';
+      if (img) {
+        image = clean(
+          img.currentSrc ||
+            img.getAttribute?.('src') ||
+            img.getAttribute?.('data-src') ||
+            img.getAttribute?.('data-original') ||
+            parseSrcset(img.getAttribute?.('srcset') || '') ||
+            ''
+        );
+      }
+
+      if (title) {
+        items.push({ title, url, price, image });
+      }
+    }
+
+    return items;
+  });
+}
+
+async function collectDetailData(context, url) {
+  const page = await context.newPage({
+    userAgent:
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
+    viewport: { width: 1600, height: 1200 },
+  });
+
   try {
-    const page = await browser.newPage({
-      userAgent:
-        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
-      viewport: { width: 1600, height: 1200 },
-    });
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
+    await page.waitForTimeout(2500);
 
-    await page.goto(SOURCE_URL, { waitUntil: 'domcontentloaded', timeout: 90000 });
-    await page.waitForTimeout(4000);
+    return await page.evaluate(() => {
+      const clean = (v) => String(v || '').replace(/\s+/g, ' ').trim();
+      const abs = (v) => {
+        try {
+          return new URL(String(v || ''), location.origin).toString();
+        } catch {
+          return '';
+        }
+      };
+      const parseSrcset = (srcset) => {
+        const out = [];
+        const parts = String(srcset || '')
+          .split(',')
+          .map((p) => p.trim())
+          .filter(Boolean);
+        for (const part of parts) {
+          out.push(part.split(/\s+/)[0] || '');
+        }
+        return out;
+      };
+      const descCandidates = [];
+      const titleCandidates = [];
+      const priceCandidates = [];
+      const imageCandidates = [];
+      const cityCandidates = [];
+      const roomsCandidates = [];
+      const areaCandidates = [];
 
-    const extracted = await page.evaluate(() => {
-      const items = [];
-
-      const pushItem = (item) => {
-        if (!item || !item.url || !item.title) return;
-        items.push(item);
+      const push = (arr, value) => {
+        const c = clean(value);
+        if (c) arr.push(c);
       };
 
-      const priceRegex = /€\s*([0-9\.\,]+)/i;
+      const imagePush = (value) => {
+        const url = abs(value);
+        if (url) imageCandidates.push(url);
+      };
 
       for (const script of document.querySelectorAll('script[type="application/ld+json"]')) {
         const text = script.textContent || '';
         if (!text.trim()) continue;
         try {
-          const json = JSON.parse(text);
-          const stack = [json];
+          const data = JSON.parse(text);
+          const stack = [data];
           while (stack.length) {
             const node = stack.pop();
             if (Array.isArray(node)) {
@@ -109,73 +245,129 @@ async function scrapeCards() {
             }
             if (!node || typeof node !== 'object') continue;
 
-            const maybeUrl = String(node.url || node['@id'] || '').trim();
-            const maybeTitle = String(
-              node.name || node.headline || node.title || node.address?.streetAddress || ''
-            )
-              .replace(/\s+/g, ' ')
-              .trim();
-            if (maybeUrl && maybeTitle) {
-              const image = Array.isArray(node.image) ? node.image[0] : node.image;
-              const imageUrl =
-                typeof image === 'string'
-                  ? image
-                  : image && typeof image.url === 'string'
-                    ? image.url
-                    : '';
-              const p = String(node.price || node.offers?.price || '').trim();
-              pushItem({ title: maybeTitle, url: maybeUrl, price: p, image: imageUrl });
+            push(titleCandidates, node.name || node.headline || node.title || '');
+            push(descCandidates, node.description || node.text || '');
+            push(priceCandidates, node.price || node.offers?.price || '');
+            push(cityCandidates, node.address?.addressLocality || node.addressLocality || '');
+            push(roomsCandidates, node.numberOfRooms || node.numberofrooms || '');
+            push(areaCandidates, node.floorSize?.value || node.floorSize || node.area || '');
+
+            const image = node.image;
+            if (Array.isArray(image)) {
+              for (const i of image) {
+                if (typeof i === 'string') imagePush(i);
+                else if (i && typeof i.url === 'string') imagePush(i.url);
+              }
+            } else if (typeof image === 'string') {
+              imagePush(image);
+            } else if (image && typeof image.url === 'string') {
+              imagePush(image.url);
             }
+
             for (const val of Object.values(node)) stack.push(val);
           }
         } catch {
-          // ignore malformed json-ld
+          // ignore invalid json-ld blocks
         }
       }
 
-      const anchors = Array.from(document.querySelectorAll('a[href]'));
-      for (const a of anchors) {
-        const href = a.getAttribute('href') || '';
-        const abs = new URL(href, location.origin).toString();
-        const path = new URL(abs).pathname || '';
-        if (!/\/[a-z-]+-te-huur\/[a-z0-9-]+\/[0-9a-f]{8}\//i.test(path)) continue;
+      push(titleCandidates, document.querySelector('h1')?.textContent || '');
+      push(titleCandidates, document.querySelector('meta[property="og:title"]')?.content || '');
+      push(descCandidates, document.querySelector('meta[property="og:description"]')?.content || '');
+      push(descCandidates, document.querySelector('meta[name="description"]')?.content || '');
+      imagePush(document.querySelector('meta[property="og:image"]')?.content || '');
 
-        const card = a.closest('article, li, div') || a.parentElement;
-        const text = (card?.textContent || '').replace(/\s+/g, ' ').trim();
-        const heading = card?.querySelector('h1,h2,h3,h4');
-        const title = (heading?.textContent || a.textContent || '').replace(/\s+/g, ' ').trim();
-        const match = text.match(priceRegex);
-        const price = match ? match[1] : '';
-        const img = card?.querySelector('img');
-        const image = (img?.currentSrc || img?.getAttribute('src') || '').trim();
+      const fullText = clean(document.body?.innerText || '');
+      const pmPriceMatch = fullText.match(/€\s*([0-9\.\,]+)\s*p\/?m/i);
+      const anyPriceMatch = fullText.match(/€\s*([0-9\.\,]+)/i);
+      if (pmPriceMatch) push(priceCandidates, pmPriceMatch[1]);
+      else if (anyPriceMatch) push(priceCandidates, anyPriceMatch[1]);
 
-        pushItem({ title, url: abs, price, image });
+      const roomsMatch = fullText.match(/(\d+)\s*kamer/i);
+      if (roomsMatch) push(roomsCandidates, roomsMatch[1]);
+      const areaMatch = fullText.match(/(\d+)\s*m2/i) || fullText.match(/(\d+)\s*m²/i);
+      if (areaMatch) push(areaCandidates, areaMatch[1]);
+
+      for (const img of document.querySelectorAll('img')) {
+        imagePush(img.currentSrc || img.getAttribute('src') || img.getAttribute('data-src') || '');
+        imagePush(img.getAttribute('data-original') || '');
+      }
+      for (const source of document.querySelectorAll('source[srcset]')) {
+        for (const src of parseSrcset(source.getAttribute('srcset') || '')) imagePush(src);
       }
 
-      return items;
+      return {
+        titleCandidates,
+        descCandidates,
+        priceCandidates,
+        imageCandidates,
+        cityCandidates,
+        roomsCandidates,
+        areaCandidates,
+      };
     });
+  } finally {
+    await page.close();
+  }
+}
 
-    const cards = [];
+async function scrapeCards() {
+  const browser = await chromium.launch({ headless: true });
+  try {
+    const context = await browser.newContext({
+      userAgent:
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36',
+      viewport: { width: 1600, height: 1200 },
+    });
+    const page = await context.newPage();
+
+    await page.goto(SOURCE_URL, { waitUntil: 'domcontentloaded', timeout: 90000 });
+    await page.waitForTimeout(4000);
+
+    const listingItems = await collectListingItems(page);
+    const deduped = [];
     const seen = new Set();
-
-    for (const raw of extracted) {
-      const url = normalizeUrl(raw.url);
+    for (const item of listingItems) {
+      const url = normalizeUrl(item.url);
       if (!url || !isDetailPath(url) || seen.has(url)) continue;
       seen.add(url);
+      deduped.push({
+        title: cleanText(item.title),
+        url,
+        price: normalizePrice(item.price),
+        image: normalizeUrl(item.image),
+      });
+      if (deduped.length >= LIMIT) break;
+    }
 
-      const title = cleanTitle(raw.title);
-      if (!title) continue;
+    const cards = [];
+    for (const item of deduped) {
+      const detail = await collectDetailData(context, item.url);
+
+      const title = pickBestTitle(detail.titleCandidates, item.title);
+      const price = normalizePrice(detail.priceCandidates[0] || item.price);
+      const description = pickBestDescription(detail.descCandidates);
+      const images = pickImages([item.image, ...detail.imageCandidates], 20);
+      const image = images[0] || '';
+      const city = pickCity(detail.cityCandidates);
+      const rooms = normalizeInt(detail.roomsCandidates[0] || '');
+      const area = normalizeInt(detail.areaCandidates[0] || '');
 
       cards.push({
-        external_id: stableId(url),
+        external_id: stableId(item.url),
         title,
-        url,
-        price: normalizePrice(raw.price),
-        image: normalizeUrl(raw.image),
+        url: item.url,
+        price,
+        image,
+        images,
+        description,
+        city,
+        rooms,
+        area,
       });
     }
 
-    return cards.slice(0, LIMIT);
+    return cards.filter((c) => c.url && c.title).slice(0, LIMIT);
   } finally {
     await browser.close();
   }
