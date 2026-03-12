@@ -124,15 +124,42 @@ function parseJinaDetail(markdown, detailUrl) {
   let city = '';
   const cityFromTitle = title.match(/\bin\s+([A-Za-zÀ-ÿ' -]+)$/u);
   if (cityFromTitle) city = cleanText(cityFromTitle[1]);
+  if (!city) {
+    try {
+      const parts = new URL(detailUrl).pathname.split('/').filter(Boolean);
+      if (parts.length >= 2) {
+        const raw = String(parts[1] || '').replace(/-/g, ' ');
+        if (raw) {
+          city = raw
+            .split(' ')
+            .filter(Boolean)
+            .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+            .join(' ');
+        }
+      }
+    } catch {
+      // ignore
+    }
+  }
 
   const roomsMatch = text.match(/(\d+)\s*kamer/i);
   const areaMatch = text.match(/(\d+)\s*m(?:²|2)/i);
+
+  let images = pickImages(imageCandidates, 20);
+  const folderMatch = images[0]?.match(/https?:\/\/[^/]+\/([0-9a-f-]{20,})\//i);
+  if (folderMatch && folderMatch[1]) {
+    const marker = `/${folderMatch[1]}/`;
+    const filtered = images.filter((url) => url.includes(marker));
+    if (filtered.length >= 3) {
+      images = filtered;
+    }
+  }
 
   return {
     title,
     price,
     description,
-    images: pickImages(imageCandidates, 20),
+    images,
     city,
     rooms: normalizeInt(roomsMatch ? roomsMatch[1] : ''),
     area: normalizeInt(areaMatch ? areaMatch[1] : ''),
@@ -165,7 +192,7 @@ function isLikelyImageUrl(url) {
     if (!p || p === '/' || p === '/favicon.ico') return false;
     if (/\.(jpg|jpeg|png|gif|webp|avif|bmp|heic|heif)(?:$|\?)/i.test(url)) return true;
     if (p.includes('/media/') || p.includes('/image/') || p.includes('/img/')) return true;
-    if (p.includes('/logo')) return false;
+    if (p.includes('/logo') || p.includes('logo-')) return false;
     return true;
   } catch {
     return false;
