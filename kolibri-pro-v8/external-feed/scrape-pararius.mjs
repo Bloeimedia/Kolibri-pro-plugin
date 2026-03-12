@@ -15,6 +15,22 @@ function cleanText(value) {
   return String(value || '').replace(/\s+/g, ' ').trim();
 }
 
+function cleanMultilineText(value) {
+  const lines = String(value || '')
+    .replace(/\r/g, '')
+    .split('\n')
+    .map((l) => l.trimEnd());
+  const out = [];
+  let prevEmpty = false;
+  for (const line of lines) {
+    const isEmpty = line.trim() === '';
+    if (isEmpty && prevEmpty) continue;
+    out.push(isEmpty ? '' : line);
+    prevEmpty = isEmpty;
+  }
+  return out.join('\n').trim();
+}
+
 function normalizeUrl(value) {
   const raw = cleanText(value);
   if (!raw) return '';
@@ -118,7 +134,7 @@ function parseJinaDetail(markdown, detailUrl) {
     /Beschrijving\s*\n[-=]+\n([\s\S]*?)(?:\n(?:Meer|Overdracht|Oppervlakte en inhoud|Bouw|Indeling|Buitenruimte)\n[-=]+)/i
   );
   if (descMatch) {
-    description = cleanText(descMatch[1]);
+    description = cleanMultilineText(descMatch[1]);
   }
 
   let city = '';
@@ -212,10 +228,24 @@ function dedupeStrings(values) {
   return out;
 }
 
+function dedupeDescriptions(values) {
+  const out = [];
+  const seen = new Set();
+  for (const v of values) {
+    const c = cleanMultilineText(v);
+    if (!c) continue;
+    const key = cleanText(c).toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(c);
+  }
+  return out;
+}
+
 function pickBestDescription(candidates) {
-  const clean = dedupeStrings(candidates).filter((v) => v.length >= 40);
+  const clean = dedupeDescriptions(candidates).filter((v) => cleanText(v).length >= 40);
   if (!clean.length) return '';
-  clean.sort((a, b) => b.length - a.length);
+  clean.sort((a, b) => cleanText(b).length - cleanText(a).length);
   return clean[0];
 }
 
@@ -538,10 +568,14 @@ async function scrapeCards() {
     for (const item of deduped) {
       const detail = await collectDetailData(context, item.url);
       let jinaDetail = null;
+      const hasMultilineDesc = (detail.descCandidates || []).some((d) =>
+        String(d || '').includes('\n')
+      );
       if (
         !detail.imageCandidates?.length ||
         !detail.descCandidates?.length ||
-        !detail.titleCandidates?.length
+        !detail.titleCandidates?.length ||
+        !hasMultilineDesc
       ) {
         const jinaText = await fetchViaJina(item.url);
         if (jinaText) {
