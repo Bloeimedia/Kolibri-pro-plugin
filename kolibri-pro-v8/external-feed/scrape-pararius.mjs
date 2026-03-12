@@ -52,6 +52,89 @@ function stableId(url) {
   return 'pararius_' + crypto.createHash('sha1').update(url).digest('hex').slice(0, 16);
 }
 
+function extractDetailUrlsFromText(text) {
+  const out = [];
+  const seen = new Set();
+  const regex = /https?:\/\/www\.pararius\.nl\/[a-z-]+-te-huur\/[a-z0-9-]+\/[0-9a-f]{8}\/[a-z0-9-]+/gi;
+  let m;
+  while ((m = regex.exec(String(text || ''))) !== null) {
+    const url = normalizeUrl(m[0]);
+    if (!url || seen.has(url)) continue;
+    seen.add(url);
+    out.push(url);
+  }
+  return out;
+}
+
+async function fetchViaJina(url) {
+  const normalized = normalizeUrl(url);
+  if (!normalized) return '';
+  const target = 'https://r.jina.ai/http://' + normalized.replace(/^https?:\/\//, '');
+  try {
+    const res = await fetch(target, {
+      headers: {
+        Accept: 'text/plain',
+      },
+    });
+    if (!res.ok) return '';
+    return await res.text();
+  } catch {
+    return '';
+  }
+}
+
+function parseJinaListingItems(markdown) {
+  const urls = extractDetailUrlsFromText(markdown);
+  return urls.map((url) => ({
+    title: '',
+    url,
+    price: '',
+    image: '',
+  }));
+}
+
+function parseJinaDetail(markdown, detailUrl) {
+  const text = String(markdown || '');
+  const titleMatch = text.match(/^Title:\s*(.+)$/m);
+  const title = cleanText(titleMatch ? titleMatch[1] : '');
+
+  const priceMatch = text.match(/€\s*([0-9\.\,]+)/i);
+  const price = normalizePrice(priceMatch ? priceMatch[1] : '');
+
+  const imageCandidates = [];
+  const imageRegex = /!\[[^\]]*\]\((https?:\/\/[^\s)]+)\)/g;
+  let im;
+  while ((im = imageRegex.exec(text)) !== null) {
+    imageCandidates.push(im[1]);
+  }
+
+  let description = '';
+  const descMatch = text.match(
+    /Beschrijving\s*\n[-=]+\n([\s\S]*?)(?:\n(?:Meer|Overdracht|Oppervlakte en inhoud|Bouw|Indeling|Buitenruimte)\n[-=]+)/i
+  );
+  if (descMatch) {
+    description = cleanText(descMatch[1]);
+  }
+
+  let city = '';
+  const cityFromTitle = title.match(/\bin\s+([A-Za-zÀ-ÿ' -]+)$/u);
+  if (cityFromTitle) city = cleanText(cityFromTitle[1]);
+
+  const roomsMatch = text.match(/(\d+)\s*kamer/i);
+  const areaMatch = text.match(/(\d+)\s*m(?:²|2)/i);
+
+  return {
+    title,
+    price,
+    description,
+    images: pickImages(imageCandidates, 20),
+    city,
+    rooms: normalizeInt(roomsMatch ? roomsMatch[1] : ''),
+    area: normalizeInt(areaMatch ? areaMatch[1] : ''),
+    url: normalizeUrl(detailUrl),
+  };
+}
+
 async function readExistingFeedCards() {
   try {
     const raw = await fs.readFile(OUTPUT_FILE, 'utf8');
@@ -105,7 +188,13 @@ function pickBestDescription(candidates) {
 }
 
 function pickBestTitle(candidates, fallback = '') {
-  const clean = dedupeStrings(candidates).filter((v) => v.length >= 4);
+  const clean = dedupeStrings(candidates).filter((v) => {
+    if (v.length < 4) return false;
+    const lc = v.toLowerCase();
+    if (lc.includes('pararius.nl')) return false;
+    if (lc === 'www.pararius.nl') return false;
+    return true;
+  });
   if (clean.length) return clean[0];
   return cleanText(fallback);
 }
@@ -389,6 +478,12 @@ async function scrapeCards() {
 
     let listingItems = await waitForListingItems(page);
     if (!listingItems.length) {
+      const jinaIndex = await fetchViaJina(SOURCE_URL);
+      if (jinaIndex) {
+        listingItems = parseJinaListingItems(jinaIndex);
+      }
+    }
+    if (!listingItems.length) {
       // Fallback: keep existing listing URLs so feed does not go empty on temporary anti-bot challenge.
       listingItems = await readExistingFeedCards();
     }
@@ -410,15 +505,41 @@ async function scrapeCards() {
     const cards = [];
     for (const item of deduped) {
       const detail = await collectDetailData(context, item.url);
+      let jinaDetail = null;
+      if (
+        !detail.imageCandidates?.length ||
+        !detail.descCandidates?.length ||
+        !detail.titleCandidates?.length
+      ) {
+        const jinaText = await fetchViaJina(item.url);
+        if (jinaText) {
+          jinaDetail = parseJinaDetail(jinaText, item.url);
+        }
+      }
 
-      const title = pickBestTitle(detail.titleCandidates, item.title);
-      const price = normalizePrice(detail.priceCandidates[0] || item.price);
-      const description = pickBestDescription(detail.descCandidates);
-      const images = pickImages([item.image, ...detail.imageCandidates], 20);
+      const title = pickBestTitle(
+        [
+          ...(jinaDetail?.title ? [jinaDetail.title] : []),
+          ...(detail.titleCandidates || []),
+          item.title,
+        ],
+        item.title || item.url
+      );
+      const price = normalizePrice(
+        (jinaDetail?.price || '') || detail.priceCandidates?.[0] || item.price
+      );
+      const description = pickBestDescription([
+        ...(jinaDetail?.description ? [jinaDetail.description] : []),
+        ...(detail.descCandidates || []),
+      ]);
+      const images = pickImages(
+        [item.image, ...(detail.imageCandidates || []), ...(jinaDetail?.images || [])],
+        20
+      );
       const image = images[0] || '';
-      const city = pickCity(detail.cityCandidates);
-      const rooms = normalizeInt(detail.roomsCandidates[0] || '');
-      const area = normalizeInt(detail.areaCandidates[0] || '');
+      const city = pickCity([...(jinaDetail?.city ? [jinaDetail.city] : []), ...(detail.cityCandidates || [])]);
+      const rooms = normalizeInt((jinaDetail?.rooms || '') || detail.roomsCandidates?.[0] || '');
+      const area = normalizeInt((jinaDetail?.area || '') || detail.areaCandidates?.[0] || '');
 
       cards.push({
         external_id: stableId(item.url),
