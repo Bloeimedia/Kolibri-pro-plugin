@@ -1,6 +1,6 @@
 # Gratis externe feed zonder Apify
 
-Deze setup gebruikt GitHub Actions + Playwright om dagelijks Pararius te scrapen en `docs/feed.json` te publiceren.
+Deze setup gebruikt GitHub Actions + Playwright om dagelijks Pararius te scrapen en `kolibri-pro-v8/docs/feed.json` te publiceren.
 
 ## 1) Repo op GitHub zetten
 
@@ -10,10 +10,7 @@ Deze setup gebruikt GitHub Actions + Playwright om dagelijks Pararius te scrapen
 ## 2) GitHub Pages aanzetten
 
 - Ga in GitHub naar `Settings` -> `Pages`.
-- Kies:
-  - `Source`: `Deploy from a branch`
-  - `Branch`: `main`
-  - `Folder`: `/docs`
+- Kies `Source`: `GitHub Actions`.
 - Save.
 
 Je feed URL wordt dan:
@@ -32,7 +29,9 @@ Als je dit niet invult, gebruikt de workflow dezelfde URL als default.
 
 - Ga naar `Actions` -> `Kolibri Pararius Feed`.
 - Klik `Run workflow`.
-- Na een succesvolle run staat data in `docs/feed.json`.
+- Na een succesvolle run staat data in `kolibri-pro-v8/docs/feed.json`.
+
+- Run daarna ook `Actions` -> `Deploy Feed Pages` -> `Run workflow`.
 
 De workflow draait daarna automatisch dagelijks (UTC cron).
 
