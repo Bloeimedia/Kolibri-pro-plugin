@@ -70,8 +70,11 @@ async function fetchViaJina(url) {
   const normalized = normalizeUrl(url);
   if (!normalized) return '';
   const target = 'https://r.jina.ai/http://' + normalized.replace(/^https?:\/\//, '');
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 25000);
   try {
     const res = await fetch(target, {
+      signal: controller.signal,
       headers: {
         Accept: 'text/plain',
       },
@@ -80,6 +83,8 @@ async function fetchViaJina(url) {
     return await res.text();
   } catch {
     return '';
+  } finally {
+    clearTimeout(timeout);
   }
 }
 
