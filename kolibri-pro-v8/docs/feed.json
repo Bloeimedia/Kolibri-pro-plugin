@@ -1,13 +1,18 @@
 {
-  "generated_at": "2026-03-12T11:06:36.285Z",
+  "generated_at": "2026-03-12T12:12:49.187Z",
   "source_url": "https://www.pararius.nl/makelaars/woltersum/vici-vastgoed",
   "cards": [
     {
       "external_id": "pararius_185161881fc4931b",
-      "title": "Aweg 11 Ak7",
+      "title": "www.pararius.nl",
       "url": "https://www.pararius.nl/kamer-te-huur/groningen/9b9f513f/aweg",
       "price": "500",
-      "image": "https://www.pararius.nl/"
+      "image": "",
+      "images": [],
+      "description": "",
+      "city": "",
+      "rooms": "",
+      "area": ""
     }
   ]
 }
