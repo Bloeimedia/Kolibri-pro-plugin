@@ -1,5 +1,8 @@
 name: Kolibri Pararius Feed
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 on:
   workflow_dispatch:
   schedule:
@@ -18,7 +21,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
 
       - name: Install dependencies
         working-directory: kolibri-pro-v8/external-feed
