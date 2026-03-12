@@ -52,6 +52,24 @@ function stableId(url) {
   return 'pararius_' + crypto.createHash('sha1').update(url).digest('hex').slice(0, 16);
 }
 
+async function readExistingFeedCards() {
+  try {
+    const raw = await fs.readFile(OUTPUT_FILE, 'utf8');
+    const json = JSON.parse(raw);
+    if (!json || !Array.isArray(json.cards)) return [];
+    return json.cards
+      .map((c) => ({
+        title: cleanText(c?.title || ''),
+        url: normalizeUrl(c?.url || ''),
+        price: normalizePrice(c?.price || ''),
+        image: normalizeUrl(c?.image || ''),
+      }))
+      .filter((c) => c.url);
+  } catch {
+    return [];
+  }
+}
+
 function isLikelyImageUrl(url) {
   try {
     const u = new URL(url);
@@ -182,6 +200,36 @@ async function collectListingItems(page) {
   });
 }
 
+async function looksLikeChallenge(page) {
+  try {
+    const state = await page.evaluate(() => {
+      const title = String(document.title || '').toLowerCase();
+      const body = String(document.body?.innerText || '').toLowerCase();
+      const blocked =
+        title.includes('just a moment') ||
+        body.includes('enable javascript and cookies to continue') ||
+        body.includes('challenge-platform') ||
+        body.includes('cf_chl_opt');
+      return { blocked, title };
+    });
+    return !!state?.blocked;
+  } catch {
+    return false;
+  }
+}
+
+async function waitForListingItems(page) {
+  for (let i = 0; i < 8; i++) {
+    const blocked = await looksLikeChallenge(page);
+    if (!blocked) {
+      const items = await collectListingItems(page);
+      if (items.length) return items;
+    }
+    await page.waitForTimeout(5000);
+  }
+  return [];
+}
+
 async function collectDetailData(context, url) {
   const page = await context.newPage({
     userAgent:
@@ -191,7 +239,12 @@ async function collectDetailData(context, url) {
 
   try {
     await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 });
-    await page.waitForTimeout(2500);
+    for (let i = 0; i < 8; i++) {
+      const blocked = await looksLikeChallenge(page);
+      if (!blocked) break;
+      await page.waitForTimeout(4000);
+    }
+    await page.waitForTimeout(1500);
 
     return await page.evaluate(() => {
       const clean = (v) => String(v || '').replace(/\s+/g, ' ').trim();
@@ -306,6 +359,16 @@ async function collectDetailData(context, url) {
         areaCandidates,
       };
     });
+  } catch {
+    return {
+      titleCandidates: [],
+      descCandidates: [],
+      priceCandidates: [],
+      imageCandidates: [],
+      cityCandidates: [],
+      roomsCandidates: [],
+      areaCandidates: [],
+    };
   } finally {
     await page.close();
   }
@@ -322,9 +385,13 @@ async function scrapeCards() {
     const page = await context.newPage();
 
     await page.goto(SOURCE_URL, { waitUntil: 'domcontentloaded', timeout: 90000 });
-    await page.waitForTimeout(4000);
+    await page.waitForTimeout(2000);
 
-    const listingItems = await collectListingItems(page);
+    let listingItems = await waitForListingItems(page);
+    if (!listingItems.length) {
+      // Fallback: keep existing listing URLs so feed does not go empty on temporary anti-bot challenge.
+      listingItems = await readExistingFeedCards();
+    }
     const deduped = [];
     const seen = new Set();
     for (const item of listingItems) {
