@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-23T06:18:29.844Z",
+  "generated_at": "2026-03-24T05:51:30.068Z",
   "source_url": "https://www.pararius.nl/makelaars/woltersum/vici-vastgoed",
   "cards": [
     {
@@ -22,6 +22,18 @@
       "city": "Groningen",
       "rooms": "2",
       "area": "40"
+    },
+    {
+      "external_id": "pararius_db54cf8dc85e6ac7",
+      "title": "Just a moment...",
+      "url": "http://www.pararius.nl/kamer-te-huur/groningen/e40bd321/verlengde-visserstraat",
+      "price": "",
+      "image": "",
+      "images": [],
+      "description": "",
+      "city": "Groningen",
+      "rooms": "",
+      "area": ""
     }
   ]
 }
