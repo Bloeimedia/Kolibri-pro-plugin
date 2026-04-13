@@ -1,39 +1,20 @@
 {
-  "generated_at": "2026-04-12T06:59:45.747Z",
+  "generated_at": "2026-04-13T05:25:57.556Z",
   "source_url": "https://www.pararius.nl/makelaars/woltersum/vici-vastgoed",
   "cards": [
     {
       "external_id": "pararius_5b34222552c8c452",
-      "title": "Verlengde Visserstraat 7 Ak2",
+      "title": "Just a moment...",
       "url": "http://www.pararius.nl/kamer-te-huur/groningen/1c6f40b2/verlengde-visserstraat",
       "price": "695",
       "image": "https://casco-media-prod.global.ssl.fastly.net/1c6f40b2-358b-5628-aab5-51d64921fe9a/91fab74e97e6d8869ddc5c7e62aab310.jpg?width=600&auto=webp",
       "images": [
-        "https://casco-media-prod.global.ssl.fastly.net/1c6f40b2-358b-5628-aab5-51d64921fe9a/91fab74e97e6d8869ddc5c7e62aab310.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/2ad5ad1c-a586-54b4-b981-f147dfc2148d/400073c80729c66c2779f219dba89d2f.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/475ceca7-ef72-522a-a822-3f124e34716e/12f46bd79d761789ba9e7dda99a4913e.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/0f0749a6-9b88-54ce-9a5d-a28ba5d23cc6/de6757899e2af6c177057941de4210a2.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/cf2cde57-a1bc-571a-be7a-4daa30cc2637/976105fefe5728ab31468dd022ef1221.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/548e7346-8468-5cae-85be-41e441782ffa/727b8c57dfdce6b3941f4d0de6b30363.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/57360e8b-eeb7-5c2e-b5b3-d6f73b846045/72c79410388834b0ae1a3857609e254c.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/6472138b-f945-5e9d-b21e-679dfb6bc3f7/ee2d3a73509958523922eb1603262987.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/f21aaf2b-f9df-5313-934f-24744629b0d9/e25566dcc470e84cf4e1f85fda9ab6da.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/cf52543a-e482-58c3-9758-10c13c1eaa21/24c0007faa1b7f1877efe91f145cef8d.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/647edf90-6971-5d92-a34f-bc0dc2a86965/b1c06294a168af5f510d1f09f2ac2530.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/a217dfe4-7415-5c5d-9792-54bd5f6c205c/f1b0cbe59ede02a4c29fa8121e99dfd5.jpg?width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/b4f7d1d8-7a56-5fa0-b6f6-ec662fec8f5c/7a446d9e32e7d191aaf0fd769c9a263c.jpg?width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/21698b33-7f22-5a7c-8a51-d746dbc200e1/b64b47a0-9744-5ac5-baef-5a8640f596cc?sig=2ac2cb0427713c1541df5959f362f050b777cccda4941ca4303129e7eb03dd0d&original_uri=https%3A%2F%2Fres.cloudinary.com%2Fwoningnet%2Fimage%2Fupload%2Fq_auto%2Ff_auto%2Fc_fill%2Cw_1000%2Fv1775820047%2FWRB%2FP%2F9722%2Fcwpjotxnen4jxpc6lp9u&width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/5da04a52-f60d-5780-92fe-ce0a680f01ac/8e16362b-8695-57d2-a7c9-1ab2b3b1b055?sig=79f3a67d93b07b903da955b7aee7bf4d19683dae172f707b79da0c6120602932&original_uri=https%3A%2F%2Flamberink.nl%2Fuploads%2Fmedia%2Fcache%2F894b9034b0100d04037d65eb6521b90ec43add64%2F1400_x_auto_271197918.jpg&width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/717e6dd8-c5d7-5e66-afab-f97392e05a50/0657e48c42d3bc5062d87a3202f5e9d7.jpg?width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/bae86109-15aa-54f0-aaf9-fa56aa480d12/7f3f0bfb882a8cb6540a780583658009.jpg?width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/e1717e12-b516-5aeb-9fa9-566ab42ca962/8d2da02c-64de-528f-8ac8-094d09d0bb86?sig=479472aa2774d0c3dd162f8f8426c2fc301bc646aef09ed766f6ecb4d8e698e8&original_uri=https%3A%2F%2Fikwilhuren.nu%2Fmedia%2F2b%2F2b1e0ee0611ab3611199cf3d5bfe563e%2F1600%2Ffriesestraatweg225489743aegroningennl-12.jpg&width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/7011c19a-154e-5bd5-8c42-b02081bfdf49/5a0fb796-e8b4-5213-9b1e-2ec718a14957?sig=96178d71eab55c2b3f00a2df07111bf31119e3e53cb45619cf78c1c1453f74da&original_uri=https%3A%2F%2Fikwilhuren.nu%2Fmedia%2F84%2F84c67a7fd0c1aaf3f6557d88a28299df%2F1600%2Ffriesestraatweg225489743aegroningennl-08.jpg&width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/7ea5b932-ed92-515b-a9d0-dbdcefe01f50/b0ed2eb4fae1fedbea26fef32f7f60f9.jpg?width=600&auto=webp&width=600&auto=webp"
+        "https://casco-media-prod.global.ssl.fastly.net/1c6f40b2-358b-5628-aab5-51d64921fe9a/91fab74e97e6d8869ddc5c7e62aab310.jpg?width=600&auto=webp"
       ],
       "description": "",
       "city": "Groningen",
-      "rooms": "6",
-      "area": "16"
+      "rooms": "",
+      "area": ""
     },
     {
       "external_id": "pararius_db54cf8dc85e6ac7",
@@ -46,10 +27,10 @@
         "https://casco-media-prod.global.ssl.fastly.net/2ad5ad1c-a586-54b4-b981-f147dfc2148d/400073c80729c66c2779f219dba89d2f.jpg?width=600&auto=webp",
         "https://casco-media-prod.global.ssl.fastly.net/475ceca7-ef72-522a-a822-3f124e34716e/12f46bd79d761789ba9e7dda99a4913e.jpg?width=600&auto=webp",
         "https://casco-media-prod.global.ssl.fastly.net/0f0749a6-9b88-54ce-9a5d-a28ba5d23cc6/de6757899e2af6c177057941de4210a2.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/cf2cde57-a1bc-571a-be7a-4daa30cc2637/976105fefe5728ab31468dd022ef1221.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/548e7346-8468-5cae-85be-41e441782ffa/727b8c57dfdce6b3941f4d0de6b30363.jpg?width=600&auto=webp",
         "https://casco-media-prod.global.ssl.fastly.net/57360e8b-eeb7-5c2e-b5b3-d6f73b846045/72c79410388834b0ae1a3857609e254c.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/cf2cde57-a1bc-571a-be7a-4daa30cc2637/976105fefe5728ab31468dd022ef1221.jpg?width=600&auto=webp",
         "https://casco-media-prod.global.ssl.fastly.net/6472138b-f945-5e9d-b21e-679dfb6bc3f7/ee2d3a73509958523922eb1603262987.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/548e7346-8468-5cae-85be-41e441782ffa/727b8c57dfdce6b3941f4d0de6b30363.jpg?width=600&auto=webp",
         "https://casco-media-prod.global.ssl.fastly.net/f21aaf2b-f9df-5313-934f-24744629b0d9/e25566dcc470e84cf4e1f85fda9ab6da.jpg?width=600&auto=webp",
         "https://casco-media-prod.global.ssl.fastly.net/cf52543a-e482-58c3-9758-10c13c1eaa21/24c0007faa1b7f1877efe91f145cef8d.jpg?width=600&auto=webp",
         "https://casco-media-prod.global.ssl.fastly.net/647edf90-6971-5d92-a34f-bc0dc2a86965/b1c06294a168af5f510d1f09f2ac2530.jpg?width=600&auto=webp",
