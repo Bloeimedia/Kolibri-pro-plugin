@@ -1,18 +1,30 @@
 {
-  "generated_at": "2026-04-29T05:36:14.251Z",
+  "generated_at": "2026-04-30T05:41:50.050Z",
   "source_url": "https://www.pararius.nl/makelaars/woltersum/vici-vastgoed",
   "cards": [
     {
       "external_id": "pararius_0da31e97b4039e3b",
-      "title": "Just a moment...",
+      "title": "Herestraat 59",
       "url": "http://www.pararius.nl/appartement-te-huur/grijpskerk/f9899bc9/herestraat",
-      "price": "",
-      "image": "",
-      "images": [],
+      "price": "1700",
+      "image": "https://casco-media-prod.global.ssl.fastly.net/f9899bc9-f1db-5d3e-861a-0b40848890a6/4abe7d05fed30e4056ef0b3f915cf54f.jpg?width=600&auto=webp",
+      "images": [
+        "https://casco-media-prod.global.ssl.fastly.net/f9899bc9-f1db-5d3e-861a-0b40848890a6/4abe7d05fed30e4056ef0b3f915cf54f.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/f9899bc9-f1db-5d3e-861a-0b40848890a6/da3b38a0257274d49fc2f685d41a46ac.png?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/f9899bc9-f1db-5d3e-861a-0b40848890a6/bef6de7e9cb870dd40434d74156d553c.png?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/f9899bc9-f1db-5d3e-861a-0b40848890a6/08550d254d7113aadcbd23365e373ccc.png?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/f9899bc9-f1db-5d3e-861a-0b40848890a6/0b29a9b2565cf9639bbd30c798e9b1ce.png?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/f9899bc9-f1db-5d3e-861a-0b40848890a6/62b98deff2687c0a77ce54ce46519449.png?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/f9899bc9-f1db-5d3e-861a-0b40848890a6/15514a3b421b57e7c1c1efad654063c6.png?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/f9899bc9-f1db-5d3e-861a-0b40848890a6/6885ad0a45241ad9525fa0f9c42aca1d.png?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/f9899bc9-f1db-5d3e-861a-0b40848890a6/0677a1fa383e6bff13cd75d96c5f512f.png?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/f9899bc9-f1db-5d3e-861a-0b40848890a6/58ee8e5e7df75222975a54f635c95819.png?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/f9899bc9-f1db-5d3e-861a-0b40848890a6/c3f0ea0c339080265e12944ee03b6459.png?width=600&auto=webp"
+      ],
       "description": "",
       "city": "Grijpskerk",
-      "rooms": "",
-      "area": ""
+      "rooms": "4",
+      "area": "108"
     }
   ]
 }
