@@ -1,20 +1,24 @@
 {
-  "generated_at": "2026-06-01T07:25:23.437Z",
+  "generated_at": "2026-06-02T06:59:30.720Z",
   "source_url": "https://www.pararius.nl/makelaars/woltersum/vici-vastgoed",
   "cards": [
     {
       "external_id": "pararius_0da31e97b4039e3b",
-      "title": "Just a moment...",
+      "title": "Herestraat 59",
       "url": "http://www.pararius.nl/appartement-te-huur/grijpskerk/f9899bc9/herestraat",
-      "price": "170000",
+      "price": "1700",
       "image": "https://casco-media-prod.global.ssl.fastly.net/f9899bc9-f1db-5d3e-861a-0b40848890a6/4abe7d05fed30e4056ef0b3f915cf54f.jpg?width=600&auto=webp",
       "images": [
-        "https://casco-media-prod.global.ssl.fastly.net/f9899bc9-f1db-5d3e-861a-0b40848890a6/4abe7d05fed30e4056ef0b3f915cf54f.jpg?width=600&auto=webp"
+        "https://casco-media-prod.global.ssl.fastly.net/f9899bc9-f1db-5d3e-861a-0b40848890a6/4abe7d05fed30e4056ef0b3f915cf54f.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/f81420ef-5940-52be-a79e-30bb0a1d9f6f/4e54059f153b48ec1f702aba037e6691.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/41183ed9-9c7b-5429-84f7-bb9c0db1334b/82b9b57abf6ed6058497e50c2f06908c.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/f126a61b-965f-52f3-a301-c15cdf197fc8/e394a73a8b39382fb8014d06218a8d45.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/8ba57cb7-bbcc-539a-b91c-548f5d5a64b7/235ec84ef681599c63bc502fca9e9b6a.jpg?width=600&auto=webp"
       ],
       "description": "",
       "city": "Grijpskerk",
-      "rooms": "",
-      "area": ""
+      "rooms": "4",
+      "area": "108"
     }
   ]
 }
