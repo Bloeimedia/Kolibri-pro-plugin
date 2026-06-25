@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-24T06:17:14.025Z",
+  "generated_at": "2026-06-25T06:21:04.233Z",
   "source_url": "https://www.pararius.nl/makelaars/woltersum/vici-vastgoed",
   "cards": [
     {
       "external_id": "pararius_0da31e97b4039e3b",
-      "title": "Just a moment...",
+      "title": "Appartement te huur Herestraat 59 in Grijpskerk voor € 1.700",
       "url": "http://www.pararius.nl/appartement-te-huur/grijpskerk/f9899bc9/herestraat",
       "price": "1700",
       "image": "https://casco-media-prod.global.ssl.fastly.net/f9899bc9-f1db-5d3e-861a-0b40848890a6/4abe7d05fed30e4056ef0b3f915cf54f.jpg?width=600&auto=webp",
@@ -13,8 +13,8 @@
       ],
       "description": "",
       "city": "Grijpskerk",
-      "rooms": "",
-      "area": ""
+      "rooms": "4",
+      "area": "108"
     }
   ]
 }
