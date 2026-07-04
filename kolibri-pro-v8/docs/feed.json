@@ -1,20 +1,28 @@
 {
-  "generated_at": "2026-07-03T06:05:30.543Z",
+  "generated_at": "2026-07-04T05:56:23.943Z",
   "source_url": "https://www.pararius.nl/makelaars/woltersum/vici-vastgoed",
   "cards": [
     {
-      "external_id": "pararius_0da31e97b4039e3b",
-      "title": "Just a moment...",
-      "url": "http://www.pararius.nl/appartement-te-huur/grijpskerk/f9899bc9/herestraat",
-      "price": "1700",
-      "image": "https://casco-media-prod.global.ssl.fastly.net/f9899bc9-f1db-5d3e-861a-0b40848890a6/4abe7d05fed30e4056ef0b3f915cf54f.jpg?width=600&auto=webp",
+      "external_id": "pararius_5ca16eb3f8238e7c",
+      "title": "Kamer te huur Kloosterstraat 49 AK2 in Groningen voor € 695",
+      "url": "http://www.pararius.nl/kamer-te-huur/groningen/32c9effc/kloosterstraat",
+      "price": "695",
+      "image": "https://casco-media-prod.global.ssl.fastly.net/32c9effc-ec8d-5dea-9980-a5ace77cacab/5be7242acd7df111be6d050fa179e695.jpg?width=600&auto=webp",
       "images": [
-        "https://casco-media-prod.global.ssl.fastly.net/f9899bc9-f1db-5d3e-861a-0b40848890a6/4abe7d05fed30e4056ef0b3f915cf54f.jpg?width=600&auto=webp"
+        "https://casco-media-prod.global.ssl.fastly.net/32c9effc-ec8d-5dea-9980-a5ace77cacab/5be7242acd7df111be6d050fa179e695.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/32c9effc-ec8d-5dea-9980-a5ace77cacab/6c04ef128262ae3af8a60cbeaed4150c.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/32c9effc-ec8d-5dea-9980-a5ace77cacab/93ad62452cd6093119c9a624a8a812f4.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/32c9effc-ec8d-5dea-9980-a5ace77cacab/e794f4381a15d3ce588c8a58eabdfd2f.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/32c9effc-ec8d-5dea-9980-a5ace77cacab/25bcad1b6de9f3220bd487274f6fb8a2.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/32c9effc-ec8d-5dea-9980-a5ace77cacab/85de73cafb81403fed504c350dae37e1.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/32c9effc-ec8d-5dea-9980-a5ace77cacab/d5ea6eacfd2916858769b9f47be74233.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/32c9effc-ec8d-5dea-9980-a5ace77cacab/5cbda598dba9bedea35c117845e9964c.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/32c9effc-ec8d-5dea-9980-a5ace77cacab/f87bf92520ab8990ad2fe17e4eb66070.jpg?width=600&auto=webp"
       ],
       "description": "",
-      "city": "Grijpskerk",
-      "rooms": "",
-      "area": ""
+      "city": "Groningen",
+      "rooms": "4",
+      "area": "88"
     }
   ]
 }
