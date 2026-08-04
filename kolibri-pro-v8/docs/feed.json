@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T05:55:04.713Z",
+  "generated_at": "2026-08-04T05:27:41.823Z",
   "source_url": "https://www.pararius.nl/makelaars/woltersum/vici-vastgoed",
   "cards": [
     {
@@ -32,23 +32,17 @@
     },
     {
       "external_id": "pararius_8fbd6c7d46b45868",
-      "title": "Kamer te huur Willem Lodewijkstraat 1 K2 in Leeuwarden voor € 710",
+      "title": "Just a moment...",
       "url": "http://www.pararius.nl/kamer-te-huur/leeuwarden/f8450d4e/willem-lodewijkstraat",
       "price": "710",
       "image": "https://casco-media-prod.global.ssl.fastly.net/f8450d4e-ab67-5233-9fac-ae9b9b2c3198/c4d6c9d8e08cf1c92a67cea7798233be.jpg?width=600&auto=webp",
       "images": [
-        "https://casco-media-prod.global.ssl.fastly.net/f8450d4e-ab67-5233-9fac-ae9b9b2c3198/c4d6c9d8e08cf1c92a67cea7798233be.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/f8450d4e-ab67-5233-9fac-ae9b9b2c3198/390b96ad1fa5fea9a4143eddadf667f8.png?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/f8450d4e-ab67-5233-9fac-ae9b9b2c3198/e20df46af1fa385735e0e3fc24be8628.png?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/f8450d4e-ab67-5233-9fac-ae9b9b2c3198/cf4b985369353d3b823f9342c17bd157.png?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/f8450d4e-ab67-5233-9fac-ae9b9b2c3198/1a480885b110fcca717951c8b1c6a6d9.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/f8450d4e-ab67-5233-9fac-ae9b9b2c3198/342efa2cd8cde5ace298ff4915d030fa.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/f8450d4e-ab67-5233-9fac-ae9b9b2c3198/ed15aa501f50f6b7d635f5b7547b5571.jpg?width=600&auto=webp"
+        "https://casco-media-prod.global.ssl.fastly.net/f8450d4e-ab67-5233-9fac-ae9b9b2c3198/c4d6c9d8e08cf1c92a67cea7798233be.jpg?width=600&auto=webp"
       ],
       "description": "",
       "city": "Leeuwarden",
-      "rooms": "1",
-      "area": "22"
+      "rooms": "",
+      "area": ""
     }
   ]
 }
