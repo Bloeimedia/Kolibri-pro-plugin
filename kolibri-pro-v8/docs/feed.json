@@ -1,67 +1,71 @@
 {
-  "generated_at": "2026-08-30T08:21:29.248Z",
+  "generated_at": "2026-08-31T08:41:50.861Z",
   "source_url": "https://www.pararius.nl/makelaars/woltersum/vici-vastgoed",
   "cards": [
     {
-      "external_id": "pararius_ab03481db0187fd3",
-      "title": "Just a moment...",
-      "url": "http://www.pararius.nl/kamer-te-huur/groningen/ba634596/aweg",
-      "price": "930",
-      "image": "https://casco-media-prod.global.ssl.fastly.net/ba634596-4253-5805-9b2a-3514e6c0b9ff/23711e18876f3e9ed5b6ec084ac55b9b.jpg?width=600&auto=webp",
+      "external_id": "pararius_bb27c2e71f792faa",
+      "title": "Kamer te huur Ringovenstraat 18 Ak3 in Enschede voor € 720",
+      "url": "http://www.pararius.nl/kamer-te-huur/enschede/63f7cb9b/ringovenstraat",
+      "price": "720",
+      "image": "https://casco-media-prod.global.ssl.fastly.net/63f7cb9b-72fa-5df2-aa1a-46b18deac57b/b545c388e1705f7f71c83bf77b03933b.jpg?width=600&auto=webp",
       "images": [
-        "https://casco-media-prod.global.ssl.fastly.net/ba634596-4253-5805-9b2a-3514e6c0b9ff/23711e18876f3e9ed5b6ec084ac55b9b.jpg?width=600&auto=webp"
+        "https://casco-media-prod.global.ssl.fastly.net/63f7cb9b-72fa-5df2-aa1a-46b18deac57b/b545c388e1705f7f71c83bf77b03933b.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/63f7cb9b-72fa-5df2-aa1a-46b18deac57b/5a6b282f6844af5a5cc8d067adc7911a.png?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/63f7cb9b-72fa-5df2-aa1a-46b18deac57b/d2f02f93cfe35a00d0774702b228642b.png?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/63f7cb9b-72fa-5df2-aa1a-46b18deac57b/359d005c9bdb2e32d4cc78c49d884d43.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/63f7cb9b-72fa-5df2-aa1a-46b18deac57b/4dc29a93f8e5d0b457310f7df9d78d26.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/63f7cb9b-72fa-5df2-aa1a-46b18deac57b/495821ca50a6c1ad2214c4f68413df8f.png?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/63f7cb9b-72fa-5df2-aa1a-46b18deac57b/11e1591066a348a826f97b3d292d6ad9.png?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/63f7cb9b-72fa-5df2-aa1a-46b18deac57b/3d536c49340e9b38cd4e55d0fa9fac8e.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/63f7cb9b-72fa-5df2-aa1a-46b18deac57b/fda111632b3b7c783614f49db43e14e7.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/63f7cb9b-72fa-5df2-aa1a-46b18deac57b/67a49ad8372048bc0e500fc4b70438ec.png?width=600&auto=webp"
+      ],
+      "description": "",
+      "city": "Enschede",
+      "rooms": "1",
+      "area": "12"
+    },
+    {
+      "external_id": "pararius_5e31cb72d9a1c05b",
+      "title": "Kamer te huur Aweg 11 Ak10 in Groningen voor € 945",
+      "url": "http://www.pararius.nl/kamer-te-huur/groningen/78f30f23/aweg",
+      "price": "945",
+      "image": "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/23711e18876f3e9ed5b6ec084ac55b9b.jpg?width=600&auto=webp",
+      "images": [
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/23711e18876f3e9ed5b6ec084ac55b9b.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/5be450d6d8e4c98fa538bb1b475bd3c1.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/cd99b5ccbb8e18f75357ab253a26e635.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/e5ad13357234f5eebcfadcf10fbf1d59.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/cd4f86c91995945d5d59b37af1f0bdab.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/43b0226a0fa019add53b02fbda78d093.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/02fe158e08743684550aacdfa3f6903d.png?width=600&auto=webp"
       ],
       "description": "",
       "city": "Groningen",
-      "rooms": "",
-      "area": ""
-    },
-    {
-      "external_id": "pararius_c6e864e36d74137c",
-      "title": "Kamer te huur Willem Lodewijkstraat 1 K3 in Leeuwarden voor € 640",
-      "url": "http://www.pararius.nl/kamer-te-huur/leeuwarden/cf6ba04c/willem-lodewijkstraat",
-      "price": "640",
-      "image": "https://casco-media-prod.global.ssl.fastly.net/cf6ba04c-bda1-5582-ab5a-92bf6a87130f/c4d6c9d8e08cf1c92a67cea7798233be.jpg?width=600&auto=webp",
-      "images": [
-        "https://casco-media-prod.global.ssl.fastly.net/cf6ba04c-bda1-5582-ab5a-92bf6a87130f/c4d6c9d8e08cf1c92a67cea7798233be.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/5e8c8153-e44b-5c8d-8887-1c452fd5195d/7c1f3fabe2ad7921aca500a7ec5d43e8.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/91e6d896-9468-5dc5-9459-f9864881bb74/e54f08c65eb24030421d8c0126be540a.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/5f150f97-5ec8-5bef-889d-ec7e4751642c/af4c634a293513eedf4032bd91234fb0.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/12528655-9e5e-51b8-935c-7711343e329a/ac9d879559dd34b2e57cb1305b99342b.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/5574e728-d81c-59c4-9cf9-23afac7a6246/049e942c9754347e83b5642b734f7172.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/3402de74-95b0-58f6-b601-1b05413d41b0/42d916eee88cd5e3c006524cab74a736.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/c21104bb-5750-51d0-96b3-271eafcbe76a/a3862ef194287c56f9cf6c96038e18cf.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/d9bea38a-9766-5776-960e-817029e1a6fa/b42af3f6353affe17ef0e9f84985a56f.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/79bf6eb9-f546-50c8-bcd1-0624d6739c09/bfb3310132ee196e4cb4db186b095251.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/0077ed60-5f9e-534a-a979-c9c1756f01c5/2db69c2f4612150a3c6635685efbfa8d.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/c52fd1d5-a385-5627-8605-a5ef90673e17/61a81bb1d90d9c5c70fe6c44ef34877f.jpg?width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/12528655-9e5e-51b8-935c-7711343e329a/ac9d879559dd34b2e57cb1305b99342b.jpg?width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/79bf6eb9-f546-50c8-bcd1-0624d6739c09/bfb3310132ee196e4cb4db186b095251.jpg?width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/bf38e7e2-9b79-55fa-b08f-2a8cd00a32f6/55c814cef26be4363ca1e1bc23ba66e4.jpg?width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/5e8c8153-e44b-5c8d-8887-1c452fd5195d/7c1f3fabe2ad7921aca500a7ec5d43e8.jpg?width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/8420c485-1bf5-5ef8-a57f-0b8675781185/b22d4d31-6153-52fb-bde6-7223086419b0?sig=d58faf2484aed19409e1d54a1c88e44cb022c4cf1268469e11dbab725def38f9&original_uri=https%3A%2F%2Fwww.devosmakelaardij.nl%2Fdata%2Ftemp%2F2-1920-1080%2F6bd5a0230204a25b3cf86097a7fdb15d.jpg&width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/dd1c609c-af50-502a-a395-fa5692656d11/a370fc53-3b5d-5c79-8be2-54fb8c11f856?sig=4fa256afa06a5629098b459b2f8f56a4d2e118db327e89e853282d0f5849cd74&original_uri=https%3A%2F%2Fwww.hellema.nl%2Fdata%2F8a2466946d8a90f26b46f59b1c3349c7.jpg&width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/87631f84-1fdd-5fd9-b2e3-2fb6d0ccb2c9/f1f18b15e8b5febb8bd0f42c308bd50a.jpg?width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/4cb169bf-6cd8-5476-9bc7-c2fd03da3278/614362abf4e5f0f724023f3fd8fda644.jpg?width=600&auto=webp&width=600&auto=webp"
-      ],
-      "description": "",
-      "city": "Leeuwarden",
       "rooms": "1",
-      "area": "14"
+      "area": "25"
     },
     {
-      "external_id": "pararius_8fbd6c7d46b45868",
-      "title": "Just a moment...",
-      "url": "http://www.pararius.nl/kamer-te-huur/leeuwarden/f8450d4e/willem-lodewijkstraat",
-      "price": "710",
-      "image": "https://casco-media-prod.global.ssl.fastly.net/f8450d4e-ab67-5233-9fac-ae9b9b2c3198/c4d6c9d8e08cf1c92a67cea7798233be.jpg?width=600&auto=webp",
+      "external_id": "pararius_b1b017a2ae2716d1",
+      "title": "Kamer te huur Jan van Galenstraat 1 AK3 in Groningen voor € 590",
+      "url": "http://www.pararius.nl/kamer-te-huur/groningen/71675c64/jan-van-galenstraat",
+      "price": "590",
+      "image": "https://casco-media-prod.global.ssl.fastly.net/71675c64-8653-51b2-a815-11d80f9825da/dcb618954f2b8a4ba1ab60dd51bd3f2d.jpg?width=600&auto=webp",
       "images": [
-        "https://casco-media-prod.global.ssl.fastly.net/f8450d4e-ab67-5233-9fac-ae9b9b2c3198/c4d6c9d8e08cf1c92a67cea7798233be.jpg?width=600&auto=webp"
+        "https://casco-media-prod.global.ssl.fastly.net/71675c64-8653-51b2-a815-11d80f9825da/dcb618954f2b8a4ba1ab60dd51bd3f2d.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/71675c64-8653-51b2-a815-11d80f9825da/f7fbfb2cc9b893158fcded74c3c62e71.png?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/71675c64-8653-51b2-a815-11d80f9825da/f87ed701d8ba4487b3c73b68fe5a62e3.png?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/71675c64-8653-51b2-a815-11d80f9825da/d7309c74dca0efb847fd228ca5867947.png?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/71675c64-8653-51b2-a815-11d80f9825da/3921246dfeec49b53a90468533a181c3.png?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/71675c64-8653-51b2-a815-11d80f9825da/acd3e648d08b3b9812434941f448da79.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/71675c64-8653-51b2-a815-11d80f9825da/8e1b220d9c6818c93737009ab988c0cd.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/71675c64-8653-51b2-a815-11d80f9825da/310b1c7051fb58a6aeb0b59a0f86b79a.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/71675c64-8653-51b2-a815-11d80f9825da/4b91b9c8474c35f78b3af2d395ce4707.jpg?width=600&auto=webp"
       ],
       "description": "",
-      "city": "Leeuwarden",
-      "rooms": "",
-      "area": ""
+      "city": "Groningen",
+      "rooms": "1",
+      "area": "15"
     }
   ]
 }
