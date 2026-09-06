@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-05T06:58:58.878Z",
+  "generated_at": "2026-09-06T07:09:48.765Z",
   "source_url": "https://www.pararius.nl/makelaars/woltersum/vici-vastgoed",
   "cards": [
     {
@@ -10,27 +10,27 @@
       "image": "https://casco-media-prod.global.ssl.fastly.net/63f7cb9b-72fa-5df2-aa1a-46b18deac57b/b545c388e1705f7f71c83bf77b03933b.jpg?width=600&auto=webp",
       "images": [
         "https://casco-media-prod.global.ssl.fastly.net/63f7cb9b-72fa-5df2-aa1a-46b18deac57b/b545c388e1705f7f71c83bf77b03933b.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/02d02032-5869-5809-b87f-e521098b165e/0ab48e9b1ade5c9309462de0f89cd549.jpg?width=300&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/30f4fd7f-1077-5831-bfa7-e45b4e928cf4/16cc534372b79b8501d970005d742e24.jpg?width=300&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/bf1778db-1ca3-50b9-b10e-d1ff766094d1/49403585f46479adeb2bbf6ba1abdbe9.jpg?width=300&auto=webp",
+        "data:image/svg+xml;utf8,%3Csvg%20width%3D%22600%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22%23FBFBFB%22%20d%3D%22M0%200h600v400H0z%22%2F%3E%3Cpath%20fill%3D%22%23888%22%20fill-rule%3D%22nonzero%22%20d%3D%22M283.2%20277v-54.353h33.6V277h42v-72.47H384L300%20123l-84%2081.53h25.2V277z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E",
+        "https://casco-media-prod.global.ssl.fastly.net/02d02032-5869-5809-b87f-e521098b165e/0ab48e9b1ade5c9309462de0f89cd549.jpg?width=100&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/02d02032-5869-5809-b87f-e521098b165e/0ab48e9b1ade5c9309462de0f89cd549.jpg?width=200&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/02d02032-5869-5809-b87f-e521098b165e/0ab48e9b1ade5c9309462de0f89cd549.jpg?width=400&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/02d02032-5869-5809-b87f-e521098b165e/0ab48e9b1ade5c9309462de0f89cd549.jpg?width=500&auto=webp",
         "https://casco-media-prod.global.ssl.fastly.net/02d02032-5869-5809-b87f-e521098b165e/0ab48e9b1ade5c9309462de0f89cd549.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/30f4fd7f-1077-5831-bfa7-e45b4e928cf4/16cc534372b79b8501d970005d742e24.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/bf1778db-1ca3-50b9-b10e-d1ff766094d1/49403585f46479adeb2bbf6ba1abdbe9.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/1ad3c1e6-ead5-51ad-9de7-7ea549b8d7dd/22d2172102643641b5f826437df716cd.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/d68536d5-8763-559a-a8e5-f9afd25b5c4d/b442a736e54679650b22e764d016a556.png?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/56313cca-292d-5aa8-9fa4-d8e1656f1118/9555562fbb8eb812c140ffc995f19d56.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/fddad53c-7bf2-5460-a2f4-103948396136/f768bfeeea8624477e64ba29d3686cba.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/77565840-3c16-571a-9382-4cdf1216b51e/04d8820cb3476446c2ed8f1be19d3ebe.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/315c09e0-fd29-5410-a995-2617eefc905b/f04551609fe950d0ff44216987c8d7e6.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/fed9316d-7eab-5e5c-ada7-84ce2a48483c/942580aa722f4f382360db69839c8c5b.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/1ee2a2e4-41d9-58c2-967e-9c3f94f58692/0818ae5ff4471eb9dd4792db16fb03a6.jpg?width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/77565840-3c16-571a-9382-4cdf1216b51e/04d8820cb3476446c2ed8f1be19d3ebe.jpg?width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/fed9316d-7eab-5e5c-ada7-84ce2a48483c/942580aa722f4f382360db69839c8c5b.jpg?width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/492123ea-dd35-55d2-a388-ecd69164eb18/b74fbf159706f14f995b49fac3cf869b.jpg?width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/9b2a3df1-265a-591b-813c-ce7eb6fbbcc0/35e108b84ca3ab42fe718eb63b9f362d.jpg?width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/30f4fd7f-1077-5831-bfa7-e45b4e928cf4/16cc534372b79b8501d970005d742e24.jpg?width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/1ad3c1e6-ead5-51ad-9de7-7ea549b8d7dd/22d2172102643641b5f826437df716cd.jpg?width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/99c9fad9-944e-5523-947d-ebb6264b9d64/566c47c0-1014-587c-9ef0-193ebcb57c77?sig=b6d2df153d2caf4d8475cbe7369973a0cb24648d2690b357a2a4af1f448b95ca&original_uri=https%3A%2F%2Fikwilhuren.nu%2Fmedia%2Ff9%2Ff98c7f0e75a389c7f76c231858146b85%2F1600%2Fnoetselbrink-22-04-25-1-.jpeg&width=600&auto=webp&width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/66910c15-4357-5867-bdd0-cf5727aac751/23703eedf6fe6a84546e6ee41651085d.jpg?width=600&auto=webp&width=600&auto=webp"
+        "https://casco-media-prod.global.ssl.fastly.net/02d02032-5869-5809-b87f-e521098b165e/0ab48e9b1ade5c9309462de0f89cd549.jpg?width=700&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/02d02032-5869-5809-b87f-e521098b165e/0ab48e9b1ade5c9309462de0f89cd549.jpg?width=800&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/02d02032-5869-5809-b87f-e521098b165e/0ab48e9b1ade5c9309462de0f89cd549.jpg?width=900&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/02d02032-5869-5809-b87f-e521098b165e/0ab48e9b1ade5c9309462de0f89cd549.jpg?width=1000&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/02d02032-5869-5809-b87f-e521098b165e/0ab48e9b1ade5c9309462de0f89cd549.jpg?width=1100&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/02d02032-5869-5809-b87f-e521098b165e/0ab48e9b1ade5c9309462de0f89cd549.jpg?width=1200&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/30f4fd7f-1077-5831-bfa7-e45b4e928cf4/16cc534372b79b8501d970005d742e24.jpg?width=100&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/30f4fd7f-1077-5831-bfa7-e45b4e928cf4/16cc534372b79b8501d970005d742e24.jpg?width=200&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/30f4fd7f-1077-5831-bfa7-e45b4e928cf4/16cc534372b79b8501d970005d742e24.jpg?width=400&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/30f4fd7f-1077-5831-bfa7-e45b4e928cf4/16cc534372b79b8501d970005d742e24.jpg?width=500&auto=webp"
       ],
-      "description": "",
+      "description": "Zolderkamer beschikbaar in recent gerenoveerde woning In een recent opgeknapte en verduurzaamde woning komt deze ruime zolderkamer beschikbaar. De woning bestaat uit in totaal drie kamers. De andere twee kamers zijn inmiddels verhuurd en de nieuwe bewoners trekken per 1 september in. De woning is recent volledig opgeknapt en verduurzaamd naar energielabel A. Zo is de woning onder andere voorzien van een warmtepomp. Daarnaast zijn de wanden recent opnieuw afgewerkt en is er een nieuwe vloer gelegd. Indeling Begane grond Op de begane grond bevindt zich een ruime gezamenlijke woonkamer met open keuken. Vanuit de woonkamer is er toegang tot de ruime achtertuin met een grote berging. Daarnaast bevindt zich op deze verdieping een aparte toiletruimte. Eerste verdieping Op de eerste verdieping bevinden zich twee verhuurde kamers en de gezamenlijke badkamer. De badkamer is voorzien van een douche, wastafel en toilet. Tweede verdieping Op de tweede verdieping bevindt zich de beschikbare zolderkamer. Doordat deze kamer als enige op deze verdieping ligt, biedt deze veel privacy binnen de woning. Huurvoorwaarden - Kale huurprijs: € 720,- per maand - Gas, water en elektriciteit dienen de huurders gezamenlijk zelf af te sluiten - Minimale huurtermijn: 12 maanden - Energielabel: A - Woning voorzien van een warmtepomp Kandidaten / geïnteresseerden We ontvangen doorgaans veel belangstelling voor onze kamers. Als je een informatieverzoek hebt ingediend of een bezichtiging hebt aangevraagd en je ontvangt van ons geen reactie, dan kun je ervan uitgaan dat de verhuurder inmiddels heeft gekozen voor andere kandidaten.",
       "city": "Enschede",
       "rooms": "1",
       "area": "12"
@@ -57,17 +57,36 @@
     },
     {
       "external_id": "pararius_b1b017a2ae2716d1",
-      "title": "Just a moment...",
+      "title": "Kamer te huur Jan van Galenstraat 1 AK3 in Groningen voor € 590",
       "url": "http://www.pararius.nl/kamer-te-huur/groningen/71675c64/jan-van-galenstraat",
       "price": "590",
       "image": "https://casco-media-prod.global.ssl.fastly.net/71675c64-8653-51b2-a815-11d80f9825da/dcb618954f2b8a4ba1ab60dd51bd3f2d.jpg?width=600&auto=webp",
       "images": [
-        "https://casco-media-prod.global.ssl.fastly.net/71675c64-8653-51b2-a815-11d80f9825da/dcb618954f2b8a4ba1ab60dd51bd3f2d.jpg?width=600&auto=webp"
+        "https://casco-media-prod.global.ssl.fastly.net/71675c64-8653-51b2-a815-11d80f9825da/dcb618954f2b8a4ba1ab60dd51bd3f2d.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/fdfe406a-686b-5a37-8852-1a3ba1c02eba/2824c7a0223657d451bff22ac1758509.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/45ad60ae-b589-5b6d-8601-e8112ccd289c/be2be96668f49a54ddeeb5d9875b8dc1.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/406965b5-4c13-5b95-82cd-047ce21a450a/2ba136933f674eb09539fd3f5bf406bf.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/edfab8f9-30af-50ae-ac97-ec3d60b18fcf/029e30004b8ac110d01074e6e3dddac9.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/7031ef94-b186-54d9-9270-e92d202a92d2/6a26f80ad3a0633dd99b3c32fab12484.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/fceac137-40f9-5b03-bf75-930adf25fc54/c7a1b78571b2e9da78b620c17b45d70f.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/5c15b55b-8501-54ed-b4b3-678408e4f3ff/975a7a19cdfbdff7284bc2c41d883097.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/47a56ae4-2b74-5293-94d6-42c449538e16/f1a8efff741575990cdcb6c721c02072.png?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/66f670c7-5985-5791-a4f6-678cc3c6eeee/4a4275863849e9df3a2a6f32f6ea0be4.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/d1bbaf73-f71a-5a7a-8dde-ef910e3a2523/f8726e8e225b4a3054d691f1abb500ce.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/7b73206b-96bb-5fd1-8fca-26ffe150d6d1/aa72a6efdcf996d4b7d96266953d99a3.jpg?width=600&auto=webp&width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/feeebca6-ca7e-5e48-9705-08f9cfe213b4/3e57c966c6b2bfcec391315d7008931e.jpg?width=600&auto=webp&width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/b7325005-6860-5a61-9783-615a27301c99/96cfe99a4479a59914911868314e671b.jpg?width=600&auto=webp&width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/45ad60ae-b589-5b6d-8601-e8112ccd289c/be2be96668f49a54ddeeb5d9875b8dc1.jpg?width=600&auto=webp&width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/c7fa8116-cec7-5056-b3bb-9c2c46cce4d9/1b17b62c-30f3-5c01-a90d-e1535f3ede8c?sig=f5cc4a0fdf529e4b499eeaad3a96f73f34c8123eaa41e95895b61c8eb7eea4f7&original_uri=https%3A%2F%2Fnmgwonen.nl%2Fwp-content%2Fuploads%2Fsites%2F3%2Feyemove%2Fwonen%2F34.848.636%2Fwoningfotos-6-7-9-8-67989497_26-1536x1024.jpg&width=600&auto=webp&width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/f47924fd-f446-55d5-9fa4-f80875b0799a/9077838b-be3d-5780-a645-44b34a6a526f?sig=8f3e762583d4a7782e5290d6e4032aa152961ab6aab45a6d4782bc0ace2c15d0&original_uri=https%3A%2F%2Fres.cloudinary.com%2Fwoningnet%2Fimage%2Fupload%2Fv1788429943%2FWRB%2FP%2F9743%2Fql8t5pjrrtkkplzeo1lh.jpg&width=600&auto=webp&width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/5c15b55b-8501-54ed-b4b3-678408e4f3ff/975a7a19cdfbdff7284bc2c41d883097.jpg?width=600&auto=webp&width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/b90753cf-682c-5d17-9fdf-58b55cd440a6/c5d16b0829d3e68e9a590094e3978cd2.jpg?width=600&auto=webp&width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/7031ef94-b186-54d9-9270-e92d202a92d2/6a26f80ad3a0633dd99b3c32fab12484.jpg?width=600&auto=webp&width=600&auto=webp"
       ],
       "description": "",
       "city": "Groningen",
-      "rooms": "",
-      "area": ""
+      "rooms": "1",
+      "area": "15"
     }
   ]
 }
