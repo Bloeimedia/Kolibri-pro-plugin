@@ -1,18 +1,26 @@
 {
-  "generated_at": "2026-09-15T07:46:01.736Z",
+  "generated_at": "2026-09-16T07:42:52.350Z",
   "source_url": "https://www.pararius.nl/makelaars/woltersum/vici-vastgoed",
   "cards": [
     {
       "external_id": "pararius_5e31cb72d9a1c05b",
-      "title": "Just a moment...",
+      "title": "Kamer te huur Aweg 11 Ak10 in Groningen voor € 945",
       "url": "http://www.pararius.nl/kamer-te-huur/groningen/78f30f23/aweg",
-      "price": "",
-      "image": "",
-      "images": [],
+      "price": "945",
+      "image": "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/23711e18876f3e9ed5b6ec084ac55b9b.jpg?width=600&auto=webp",
+      "images": [
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/23711e18876f3e9ed5b6ec084ac55b9b.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/5be450d6d8e4c98fa538bb1b475bd3c1.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/cd99b5ccbb8e18f75357ab253a26e635.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/e5ad13357234f5eebcfadcf10fbf1d59.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/cd4f86c91995945d5d59b37af1f0bdab.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/43b0226a0fa019add53b02fbda78d093.jpg?width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/02fe158e08743684550aacdfa3f6903d.png?width=600&auto=webp"
+      ],
       "description": "",
       "city": "Groningen",
-      "rooms": "",
-      "area": ""
+      "rooms": "1",
+      "area": "25"
     }
   ]
 }
