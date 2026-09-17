@@ -1,25 +1,38 @@
 {
-  "generated_at": "2026-09-16T07:42:52.350Z",
+  "generated_at": "2026-09-17T07:40:44.221Z",
   "source_url": "https://www.pararius.nl/makelaars/woltersum/vici-vastgoed",
   "cards": [
     {
       "external_id": "pararius_5e31cb72d9a1c05b",
-      "title": "Kamer te huur Aweg 11 Ak10 in Groningen voor € 945",
+      "title": "Just a moment...",
       "url": "http://www.pararius.nl/kamer-te-huur/groningen/78f30f23/aweg",
       "price": "945",
       "image": "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/23711e18876f3e9ed5b6ec084ac55b9b.jpg?width=600&auto=webp",
       "images": [
         "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/23711e18876f3e9ed5b6ec084ac55b9b.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/5be450d6d8e4c98fa538bb1b475bd3c1.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/cd99b5ccbb8e18f75357ab253a26e635.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/e5ad13357234f5eebcfadcf10fbf1d59.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/cd4f86c91995945d5d59b37af1f0bdab.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/43b0226a0fa019add53b02fbda78d093.jpg?width=600&auto=webp",
-        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/02fe158e08743684550aacdfa3f6903d.png?width=600&auto=webp"
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/23711e18876f3e9ed5b6ec084ac55b9b.jpg?width=1200&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/5be450d6d8e4c98fa538bb1b475bd3c1.jpg?width=1200&auto=webp",
+        "data:image/svg+xml;utf8,%3Csvg%20width%3D%22600%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22%23FBFBFB%22%20d%3D%22M0%200h600v400H0z%22%2F%3E%3Cpath%20fill%3D%22%23888%22%20fill-rule%3D%22nonzero%22%20d%3D%22M283.2%20277v-54.353h33.6V277h42v-72.47H384L300%20123l-84%2081.53h25.2V277z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/cd99b5ccbb8e18f75357ab253a26e635.jpg?width=1200&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/e5ad13357234f5eebcfadcf10fbf1d59.jpg?width=1200&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/cd4f86c91995945d5d59b37af1f0bdab.jpg?width=1200&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/43b0226a0fa019add53b02fbda78d093.jpg?width=1200&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/originals/7dab372a-3901-5dc4-af49-88f0d2ff5887/Vici-Vastgoed-Logo-Groot.png?width=1040",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/23711e18876f3e9ed5b6ec084ac55b9b.jpg?width=100&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/23711e18876f3e9ed5b6ec084ac55b9b.jpg?width=200&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/23711e18876f3e9ed5b6ec084ac55b9b.jpg?width=300&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/23711e18876f3e9ed5b6ec084ac55b9b.jpg?width=400&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/23711e18876f3e9ed5b6ec084ac55b9b.jpg?width=500&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/23711e18876f3e9ed5b6ec084ac55b9b.jpg?width=700&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/23711e18876f3e9ed5b6ec084ac55b9b.jpg?width=800&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/23711e18876f3e9ed5b6ec084ac55b9b.jpg?width=900&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/23711e18876f3e9ed5b6ec084ac55b9b.jpg?width=1000&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/23711e18876f3e9ed5b6ec084ac55b9b.jpg?width=1100&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/78f30f23-46c1-58b5-8eaf-0b8b37915d94/5be450d6d8e4c98fa538bb1b475bd3c1.jpg?width=100&auto=webp"
       ],
-      "description": "",
+      "description": "Ruime studentenkamer met eigen keuken én badkamer – Aweg 11A Groningen Per eind september 2026 komt aan de Aweg 11A in Groningen een ruime studentenkamer van circa 25 m² beschikbaar. De kamer beschikt over een eigen keuken én eigen badkamer, waardoor je veel privacy en comfort hebt. De kamer ligt op een uitstekende locatie, direct naast de Westerhaven en op slechts vijf minuten lopen van de binnenstad van Groningen. Supermarkten, winkels, restaurants, sportscholen en het Hoofdstation bevinden zich op loopafstand. Ook de Rijksuniversiteit Groningen, Hanzehogeschool en Noorderpoort zijn eenvoudig per fiets bereikbaar. Kamer – ca. 25 m² De ruime kamer beschikt over een eigen keuken, voorzien van: - Gaskookplaat - Inbouwkoelkast - Wasbak - Inbouwoven - Veel kastruimte Daarnaast beschikt de kamer over een eigen badkamer met: - Wastafel met kastruimte - Douche Naast de eigen voorzieningen kan gebruik worden gemaakt van de gezamenlijke voorzieningen in het pand: - Ruime gedeelde keuken - Gedeelde badkamer - Gedeelde toiletten - Groot gezamenlijk dakterras Huurinformatie - Kale huur: € 775,- per maand - Voorschot servicekosten: € 170,- per maand - Totale maandhuur: € 945,- per maand Bijzonderheden - Beschikbaar per eind september 2026 - Waarborgsom: tweemaal de kale huurprijs (€ 1.550,-) - Minimale huurperiode: 12 maanden - Eigen keuken en eigen badkamer - Uitstekende locatie nabij de binnenstad en Westerhaven Kandidaten / geïnteresseerden Wij ontvangen veel belangstelling voor onze woonruimtes. Heeft u een informatieverzoek ingediend of een bezichtiging aangevraagd en ontvangt u geen reactie van ons? Dan kunt u ervan uitgaan dat de verhuurder inmiddels voor andere kandidaten heeft gekozen.",
       "city": "Groningen",
-      "rooms": "1",
+      "rooms": "",
       "area": "25"
     }
   ]
