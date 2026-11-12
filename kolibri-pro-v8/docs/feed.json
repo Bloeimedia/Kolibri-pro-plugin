@@ -1,30 +1,47 @@
 {
-  "generated_at": "2026-11-11T09:28:12.249Z",
+  "generated_at": "2026-11-12T09:53:04.557Z",
   "source_url": "https://www.pararius.nl/makelaars/woltersum/vici-vastgoed",
   "cards": [
     {
-      "external_id": "pararius_61c8e7d635786c05",
+      "external_id": "pararius_47b28e2d2894d92d",
       "title": "Just a moment...",
-      "url": "https://www.pararius.nl/kamer-te-huur/groningen/b7efc2d4/aweg",
-      "price": "890",
-      "image": "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/b7efc2d4-3ed7-57ee-afdc-23974474f098/82dc503a-fd8b-59d2-b89c-d6bfbd8a3d0e?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2F4a584bf7%2F65ef%2F4c76%2Fbf4b%2F9fdca60b9ca7%2F%24l%2Fimg_3956.jpg&sig=e9fd2750190f5adcf264a5be1a1904f6f13416b14319503993021487fc2d490e&width=600&auto=webp",
+      "url": "https://www.pararius.nl/kamer-te-huur/enschede/c22c586a/gerststraat",
+      "price": "600",
+      "image": "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/c22c586a-4cd2-56ff-a421-e2dfa05fcc93/27278ca4-c694-5092-b49a-86b71872ac08?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2Ff259801d%2Fb0c0%2F42e3%2Fb748%2F2a7640869ae0%2F%24l%2Fimg_4748.jpg&sig=a12c901fe53a077731981bfe3964a6bb2b0760b36b27da7bd7d625c165459e0c&width=600&auto=webp",
       "images": [
-        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/b7efc2d4-3ed7-57ee-afdc-23974474f098/82dc503a-fd8b-59d2-b89c-d6bfbd8a3d0e?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2F4a584bf7%2F65ef%2F4c76%2Fbf4b%2F9fdca60b9ca7%2F%24l%2Fimg_3956.jpg&sig=e9fd2750190f5adcf264a5be1a1904f6f13416b14319503993021487fc2d490e&width=600&auto=webp"
+        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/c22c586a-4cd2-56ff-a421-e2dfa05fcc93/27278ca4-c694-5092-b49a-86b71872ac08?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2Ff259801d%2Fb0c0%2F42e3%2Fb748%2F2a7640869ae0%2F%24l%2Fimg_4748.jpg&sig=a12c901fe53a077731981bfe3964a6bb2b0760b36b27da7bd7d625c165459e0c&width=600&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/c22c586a-4cd2-56ff-a421-e2dfa05fcc93/27278ca4-c694-5092-b49a-86b71872ac08?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2Ff259801d%2Fb0c0%2F42e3%2Fb748%2F2a7640869ae0%2F%24l%2Fimg_4748.jpg&sig=a12c901fe53a077731981bfe3964a6bb2b0760b36b27da7bd7d625c165459e0c&width=1200&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/c22c586a-4cd2-56ff-a421-e2dfa05fcc93/7c79c470-1b97-561a-8f55-26e700621643?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2F000e976c%2F2978%2F40d5%2Fbfee%2F0f84936543f4%2F%24l%2Fimg_4749.jpg&sig=09eb1d3a61969c2d8ea3f250f18d8f27dcd0cf4c0c708b06559e2a6cb8183987&width=1200&auto=webp",
+        "data:image/svg+xml;utf8,%3Csvg%20width%3D%22600%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22%23FBFBFB%22%20d%3D%22M0%200h600v400H0z%22%2F%3E%3Cpath%20fill%3D%22%23888%22%20fill-rule%3D%22nonzero%22%20d%3D%22M283.2%20277v-54.353h33.6V277h42v-72.47H384L300%20123l-84%2081.53h25.2V277z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E",
+        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/c22c586a-4cd2-56ff-a421-e2dfa05fcc93/09a4a20e-577e-5b30-9ecd-f8bdf16257f0?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2F740b067d%2F7200%2F4107%2Fb188%2F8c91d4e8bcdc%2F%24l%2Fimg_4747.jpg&sig=7a4aad08ab03a230bf0ff0a97c22b7836720aa8d87f4d84d8f534e19625189b5&width=1200&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/c22c586a-4cd2-56ff-a421-e2dfa05fcc93/d11f1f3f-f936-5368-8b0f-1c0fc6caf7e7?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2Fb6634be8%2F90a1%2F4281%2Fb00b%2Ff28712ba207f%2F%24l%2Fimg_4746.jpg&sig=0f2907e1a9725e04777a11d182885b19ec4b3921e1f284fe50cc4cb60e2d6541&width=1200&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/c22c586a-4cd2-56ff-a421-e2dfa05fcc93/8b0154af-4092-5fdc-96dc-84b8c38d2bef?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2F00c1173f%2F56c7%2F435d%2Fadab%2F0987b2e35aa4%2F%24l%2Fimg_4744.jpg&sig=c8429792682520db6408b3c7bb2c8ad9fdcb6d25a842a1ee11cde6c7d69f830a&width=1200&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/c22c586a-4cd2-56ff-a421-e2dfa05fcc93/18416c41-c09b-530f-b31f-44ef8f70c104?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2Fbfb696cb%2F9c1e%2F4b04%2Fb167%2Fcb9cf4bfd99f%2F%24l%2Fimg_4745.jpg&sig=e35610f2f456d5c75588f0f1fff4fc5c620574fc029b29e703604bd47d1ba423&width=1200&auto=webp",
+        "https://www.pararius.nl/frontend/assets/Pararius/Website/Component/ListingInsightsPanel/Presentation/Images/Calendar-N27ESNBE.svg",
+        "https://www.pararius.nl/frontend/assets/Pararius/Website/Component/ListingInsightsPanel/Presentation/Images/Chat-TD2X26NP.svg",
+        "https://www.pararius.nl/frontend/assets/Pararius/Website/Component/ListingInsightsPanel/Presentation/Images/Eye-AXDTE2SZ.svg",
+        "https://www.pararius.nl/frontend/assets/Pararius/Website/Component/ListingInsightsPanel/Presentation/Images/Heart-SA7LTN5X.svg",
+        "https://casco-media-prod.global.ssl.fastly.net/originals/7dab372a-3901-5dc4-af49-88f0d2ff5887/Vici-Vastgoed-Logo-Groot.png?width=1040",
+        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/c22c586a-4cd2-56ff-a421-e2dfa05fcc93/27278ca4-c694-5092-b49a-86b71872ac08?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2Ff259801d%2Fb0c0%2F42e3%2Fb748%2F2a7640869ae0%2F%24l%2Fimg_4748.jpg&sig=a12c901fe53a077731981bfe3964a6bb2b0760b36b27da7bd7d625c165459e0c&width=100&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/c22c586a-4cd2-56ff-a421-e2dfa05fcc93/27278ca4-c694-5092-b49a-86b71872ac08?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2Ff259801d%2Fb0c0%2F42e3%2Fb748%2F2a7640869ae0%2F%24l%2Fimg_4748.jpg&sig=a12c901fe53a077731981bfe3964a6bb2b0760b36b27da7bd7d625c165459e0c&width=200&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/c22c586a-4cd2-56ff-a421-e2dfa05fcc93/27278ca4-c694-5092-b49a-86b71872ac08?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2Ff259801d%2Fb0c0%2F42e3%2Fb748%2F2a7640869ae0%2F%24l%2Fimg_4748.jpg&sig=a12c901fe53a077731981bfe3964a6bb2b0760b36b27da7bd7d625c165459e0c&width=300&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/c22c586a-4cd2-56ff-a421-e2dfa05fcc93/27278ca4-c694-5092-b49a-86b71872ac08?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2Ff259801d%2Fb0c0%2F42e3%2Fb748%2F2a7640869ae0%2F%24l%2Fimg_4748.jpg&sig=a12c901fe53a077731981bfe3964a6bb2b0760b36b27da7bd7d625c165459e0c&width=400&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/c22c586a-4cd2-56ff-a421-e2dfa05fcc93/27278ca4-c694-5092-b49a-86b71872ac08?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2Ff259801d%2Fb0c0%2F42e3%2Fb748%2F2a7640869ae0%2F%24l%2Fimg_4748.jpg&sig=a12c901fe53a077731981bfe3964a6bb2b0760b36b27da7bd7d625c165459e0c&width=500&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/c22c586a-4cd2-56ff-a421-e2dfa05fcc93/27278ca4-c694-5092-b49a-86b71872ac08?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2Ff259801d%2Fb0c0%2F42e3%2Fb748%2F2a7640869ae0%2F%24l%2Fimg_4748.jpg&sig=a12c901fe53a077731981bfe3964a6bb2b0760b36b27da7bd7d625c165459e0c&width=700&auto=webp",
+        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/c22c586a-4cd2-56ff-a421-e2dfa05fcc93/27278ca4-c694-5092-b49a-86b71872ac08?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2Ff259801d%2Fb0c0%2F42e3%2Fb748%2F2a7640869ae0%2F%24l%2Fimg_4748.jpg&sig=a12c901fe53a077731981bfe3964a6bb2b0760b36b27da7bd7d625c165459e0c&width=800&auto=webp"
       ],
-      "description": "",
-      "city": "Groningen",
+      "description": "Te huur: nette kamer met eigen keuken en badkamer – Gerststraat 2, Enschede Aan de Gerststraat 2 in Enschede komt kamer 7, een nette onzelfstandige woonruimte van circa 15 m², beschikbaar. De kamer onderscheidt zich van een reguliere studentenkamer doordat je beschikt over een eigen keuken én een eigen badkamer. De woonruimte is daarmee ideaal voor iemand die graag de gezelligheid en betaalbaarheid van kamerbewoning combineert met eigen voorzieningen en privacy. Huurprijs en voorwaarden De maandelijkse kosten bedragen: Kale huur: € 600,- Voorschot servicekosten: € 100,- Totale maandelijkse huurprijs: € 700,- De servicekosten betreffen een voorschot voor onder andere gas, water, elektriciteit en internet. De waarborgsom bedraagt tweemaal de kale maandhuur, oftewel € 1.200,-. De minimale huurperiode bedraagt 12 maanden. De kamer - De woonruimte heeft een oppervlakte van circa 14 m² en beschikt over een eigen keuken en badkamer. - De kamer maakt deel uit van een pand met in totaal 7 onzelfstandige woonruimtes, verdeeld over drie verdiepingen. De eigen keuken is voorzien van: - Inbouw inductiekookplaat - Inbouw afzuigkap - Inbouw koelkast - Kastruimte Daarnaast beschikt de kamer over een eigen badkamer, voorzien van een douche en wastafel. Alleen de toiletten worden gedeeld met de overige bewoners. In het pand zijn hiervoor in totaal 4 gemeenschappelijke toiletten aanwezig voor 7 kamers. Ligging De Gerststraat is gunstig gelegen in Enschede. Het centrum, station, winkels, supermarkten, horeca en andere dagelijkse voorzieningen zijn eenvoudig per fiets bereikbaar. Ook de Universiteit Twente is goed per fiets en openbaar vervoer te bereiken. De woonruimte is daarmee met name interessant voor studenten en beginnend werkenden die op zoek zijn naar een eigen plek in Enschede, met meer privacy en eigen voorzieningen dan bij een traditionele studentenkamer. Bijzonderheden: Kamer 7 – Gerststraat 2, Enschede Oppervlakte: circa 15 m² Eigen keuken met inbouwapparatuur Eigen badkamer met douche en wastafel 4 gemeenschappelijke toiletten Pand met in totaal 7 kamers Waarborgsom: € 1.200,- Minimale huurperiode: 12 maanden Let op: het betreft nadrukkelijk een onzelfstandige woonruimte/kamer en geen zelfstandig appartement. De keuken en badkamer behoren tot de eigen woonruimte. De toiletten zijn gezamenlijke voorzieningen en worden gedeeld met de overige bewoners van het pand. Interesse? Ben jij op zoek naar een nette kamer met veel eigen voorzieningen in Enschede? Stuur ons dan een bericht met een korte introductie over jezelf, bijvoorbeeld wat je doet qua studie of werk en vanaf wanneer je woonruimte zoekt. Op basis daarvan nemen wij contact op voor het eventueel inplannen van een bezichtiging.",
+      "city": "Enschede",
       "rooms": "",
-      "area": ""
+      "area": "15"
     },
     {
       "external_id": "pararius_1b51b65a67480ac6",
       "title": "Just a moment...",
       "url": "https://www.pararius.nl/kamer-te-huur/groningen/a54a38cb/jupiterstraat",
-      "price": "635",
-      "image": "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/a54a38cb-5ec2-5145-ba9e-005fdc76ee83/6b0a76ac-d4c9-53d6-9a58-c6e769622648?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2F72c75e71%2F7ff8%2F4e75%2Fa310%2F685e97c52710%2F%24l%2Fimg_7825.jpg&sig=fef41005fb608c09ac23b5bb980909bfd8a2e16cba292703183c48693a47b10e&width=600&auto=webp",
-      "images": [
-        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/a54a38cb-5ec2-5145-ba9e-005fdc76ee83/6b0a76ac-d4c9-53d6-9a58-c6e769622648?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2F72c75e71%2F7ff8%2F4e75%2Fa310%2F685e97c52710%2F%24l%2Fimg_7825.jpg&sig=fef41005fb608c09ac23b5bb980909bfd8a2e16cba292703183c48693a47b10e&width=600&auto=webp"
-      ],
+      "price": "",
+      "image": "",
+      "images": [],
       "description": "",
       "city": "Groningen",
       "rooms": "",
@@ -34,11 +51,9 @@
       "external_id": "pararius_6d0a72ae76df9b0d",
       "title": "Just a moment...",
       "url": "https://www.pararius.nl/kamer-te-huur/groningen/4c8109f0/jupiterstraat",
-      "price": "665",
-      "image": "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/4c8109f0-f0d2-57fc-a96f-e1fdd1e0da34/43544070-362d-5fda-9b13-b29fae103a5b?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2F27ffdc34%2F0a69%2F480a%2F8b5c%2Fa7d72d20751a%2F%24l%2Fimg_7830.jpg&sig=0530e1d7985d42f06f6b66252810f6a3a19c887bab4f9a1509ae04f7a1cf1707&width=600&auto=webp",
-      "images": [
-        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/4c8109f0-f0d2-57fc-a96f-e1fdd1e0da34/43544070-362d-5fda-9b13-b29fae103a5b?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2F27ffdc34%2F0a69%2F480a%2F8b5c%2Fa7d72d20751a%2F%24l%2Fimg_7830.jpg&sig=0530e1d7985d42f06f6b66252810f6a3a19c887bab4f9a1509ae04f7a1cf1707&width=600&auto=webp"
-      ],
+      "price": "",
+      "image": "",
+      "images": [],
       "description": "",
       "city": "Groningen",
       "rooms": "",
@@ -48,11 +63,9 @@
       "external_id": "pararius_ace76236396008b8",
       "title": "Just a moment...",
       "url": "https://www.pararius.nl/kamer-te-huur/groningen/9f65b2be/jupiterstraat",
-      "price": "630",
-      "image": "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/9f65b2be-f302-5859-b655-ec23048108a8/d0879e97-135b-58cf-8370-b1b842e52d05?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2F056d2bb7%2F9f7c%2F4d90%2F982b%2F3cfa6ca28162%2F%24l%2Fimg_7837.jpg&sig=fb30b221508f8bdd1fc34b12288270e4600fc004652e55d840caa5fc961b3b4a&width=600&auto=webp",
-      "images": [
-        "https://casco-media-prod.global.ssl.fastly.net/listings/api/media/9f65b2be-f302-5859-b655-ec23048108a8/d0879e97-135b-58cf-8370-b1b842e52d05?original_uri=https%3A%2F%2Fvenumfilestore.blob.core.windows.net%2Fpub%2F056d2bb7%2F9f7c%2F4d90%2F982b%2F3cfa6ca28162%2F%24l%2Fimg_7837.jpg&sig=fb30b221508f8bdd1fc34b12288270e4600fc004652e55d840caa5fc961b3b4a&width=600&auto=webp"
-      ],
+      "price": "",
+      "image": "",
+      "images": [],
       "description": "",
       "city": "Groningen",
       "rooms": "",
